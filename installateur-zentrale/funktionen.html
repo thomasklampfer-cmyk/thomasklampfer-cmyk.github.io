@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funktionen – Installateur-Zentrale</title>
+<meta name="description" content="Alle 37 Funktionen der Installateur-Zentrale erklärt – mit echten Bildschirmaufnahmen: Angebote, Lager, Lieferung, Klimawartung, Heizlast, Fachrechner, Belege und mehr.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/icon-clear.png">
+<style>
+
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url(assets/fonts/BarlowCondensed-600.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(assets/fonts/BarlowCondensed-700.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(assets/fonts/Inter-400.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;font-display:swap;src:url(assets/fonts/Inter-500.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(assets/fonts/Inter-600.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(assets/fonts/Inter-700.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-weight:500;font-display:swap;src:url(assets/fonts/JetBrainsMono-500.woff2) format("woff2")}
+
+:root{
+  --ink:#05070f; --ink2:#0a0f1e; --panel:#111830; --line:rgba(255,255,255,.1);
+  --text:#e9eef8; --muted:#9aa8c3; --gold:#ffc961; --gold2:#ffdf9e; --red:#c8102e; --blue:#0b4da2; --crimson:#8e1426;
+  --head:"Barlow Condensed",Inter,system-ui,sans-serif; --body:Inter,system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--ink);color:var(--text);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(var(--wrap),100% - 40px);margin-inline:auto}
+.eyebrow{font:600 13px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+h2{font-size:clamp(40px,6vw,76px)}
+h3{font-size:28px;line-height:1.05}
+.lead{font-size:clamp(17px,1.6vw,20px);color:#c7d1e6;max-width:620px}
+.rule{width:84px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--red) 0 50%,var(--blue) 50% 100%);margin:18px 0 22px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font:700 16px/1 var(--body);text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-gold{background:linear-gradient(180deg,#ffd77f,#f2a91c);color:#1a1204;box-shadow:0 10px 40px rgba(255,170,40,.35),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 50px rgba(255,170,40,.5),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ---------- Navigation */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(5,7,15,.78);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:26px;height:auto}
+.brand span{font:700 22px/1 var(--head);letter-spacing:.06em;white-space:nowrap}
+.nav ul{display:flex;gap:26px;list-style:none;margin-left:auto}
+.nav ul a{text-decoration:none;color:#c7d1e6;font-weight:500;font-size:15px}
+.nav ul a:hover{color:#fff}
+.nav .btn{padding:12px 20px;font-size:15px}
+@media (max-width:860px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+@media (max-width:480px){.brand span{font-size:17px;white-space:nowrap}.brand img{width:22px}.nav .wrap{gap:12px}.nav .btn{padding:10px 14px;font-size:13px;white-space:nowrap}.nav .btn .long{display:none}}
+@media (min-width:481px){.nav .btn .short{display:none}}
+
+
+footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 30px;align-items:center}
+footer nav{display:flex;gap:22px;margin-left:auto}
+footer a{color:#c7d1e6}
+.page-h{position:relative;padding:150px 0 50px;overflow:hidden}
+.page-h::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 0%,rgba(20,38,80,.8),transparent 70%),radial-gradient(ellipse 60% 60% at 80% 100%,rgba(142,20,38,.35),transparent 70%);pointer-events:none}
+.page-h .wrap{position:relative}
+.page-h h1{font-size:clamp(54px,9vw,120px);margin:14px 0 6px}
+.page-h h1 em{font-style:normal;color:var(--gold)}
+.page-h .lead{margin-top:16px}
+.hinweis{margin-top:22px;display:inline-block;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);font-size:14px;max-width:760px}
+.tools{position:sticky;top:74px;z-index:20;background:rgba(5,7,15,.86);backdrop-filter:blur(14px);border-block:1px solid var(--line)}
+.tools .wrap{display:flex;gap:16px;align-items:center;padding-block:12px}
+.tools input{flex:0 0 260px;font:500 15px var(--body);color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:11px 18px}
+.katnav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.katnav::-webkit-scrollbar{display:none}
+.katnav a{flex:none;text-decoration:none;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.14);font-weight:600;font-size:14px;color:#c7d1e6;white-space:nowrap}
+.katnav a small{color:var(--gold);margin-left:4px}
+.katnav a:hover,.katnav a.on{border-color:var(--gold);color:#fff}
+@media (max-width:760px){.tools .wrap{flex-direction:column;align-items:stretch;gap:10px}.tools input{flex:auto}.tools{top:64px}}
+.kat{padding:80px 0 20px;scroll-margin-top:140px}
+.kat-h{margin-bottom:34px;max-width:760px}
+.kat-h h2{font-size:clamp(40px,5.5vw,68px);margin:10px 0 8px}
+.kat-h p{color:#c7d1e6;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:980px){.grid{grid-template-columns:1fr}}
+.fn{display:grid;grid-template-columns:190px minmax(0,1fr);gap:26px;padding:22px;border-radius:26px;background:linear-gradient(160deg,rgba(28,36,62,.75),rgba(12,16,30,.92));border:1px solid var(--line);transition:border-color .3s}
+.fn:hover{border-color:rgba(255,201,97,.4)}
+.fn[hidden]{display:none}
+.ph{position:relative;align-self:start;border-radius:26px;padding:7px;background:linear-gradient(160deg,#2a3352,#0d1222);border:1px solid rgba(255,255,255,.16);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.ph video{display:block;width:100%;aspect-ratio:390/844;object-fit:cover;border-radius:20px;background:#f3f5f8}
+.ph-leer{aspect-ratio:390/844;display:grid;place-items:center;color:var(--muted);font-size:13px}
+.fn-t{min-width:0}
+.fn h3{font-size:30px;margin:12px 0 6px}
+.pitch{color:#fff;font-weight:600;margin-bottom:12px}
+.fn ul{list-style:none;display:grid;gap:7px}
+.fn li{position:relative;padding-left:20px;color:#c7d1e6;font-size:15px;line-height:1.5}
+.fn li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 8px rgba(255,201,97,.7)}
+.bdgs{display:flex;flex-wrap:wrap;gap:6px}
+.bdg{padding:4px 10px;border-radius:999px;font:600 11px/1.3 var(--body);letter-spacing:.06em;text-transform:uppercase;border:1px solid}
+.b-off{color:#8fe3b4;border-color:rgba(23,133,90,.6);background:rgba(23,133,90,.14)}
+.b-net{color:#9cc2ff;border-color:rgba(11,77,162,.7);background:rgba(11,77,162,.18)}
+.b-ki{color:var(--gold2);border-color:rgba(255,201,97,.55);background:rgba(255,201,97,.1)}
+@media (max-width:560px){.fn{grid-template-columns:1fr;padding:18px}.ph{width:min(220px,70%);justify-self:center}}
+.leer-msg{display:none;padding:60px 0;text-align:center;color:var(--muted)}
+.cta-end{margin:80px auto 0;text-align:center;padding:60px 20px;border-top:1px solid var(--line)}
+.cta-end h2{margin-bottom:20px}
+</style>
+</head>
+<body>
+<header class="nav scrolled" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Installateur-Zentrale – Startseite"><img src="assets/img/icon-clear.png" alt=""><span>INSTALLATEUR-ZENTRALE</span></a>
+    <ul>
+      <li><a href="index.html#tag">Ein Tag</a></li>
+      <li><a href="funktionen.html" aria-current="page" style="color:#fff">Funktionen</a></li>
+      <li><a href="index.html#preise">Preise</a></li>
+      <li><a href="index.html#fragen">Fragen</a></li>
+    </ul>
+    <a class="btn btn-gold" href="index.html#pilot"><span class="long">Pilotplatz anfragen</span><span class="short">Anfragen</span></a>
+  </div>
+</header>
+<main>
+  <section class="page-h">
+    <div class="wrap">
+      <div class="eyebrow">Funktionen</div>
+      <h1>Alle <em>37</em> Funktionen.</h1>
+      <div class="rule"></div>
+      <p class="lead">Jede Funktion der Installateur-Zentrale kurz erklärt – mit einer echten Bildschirmaufnahme aus der App. Tippe auf einen Bereich oder such einfach nach dem, was du brauchst.</p>
+      <p class="hinweis">Aufnahmen aus dem Vorführmodus mit erfundenen Demodaten. Die App ist in der Testphase; Funktionsumfang bis zum Marktstart vorbehalten. „Offline“ heißt: geht auch ohne Netz und gleicht später ab. KI-Funktionen brauchen Internet, und ihre Vorschläge prüfst du selbst.</p>
+    </div>
+  </section>
+  <div class="tools">
+    <div class="wrap">
+      <input type="search" id="q" placeholder="Funktion suchen, z. B. Wartung, PDF, Datanorm …" aria-label="Funktionen durchsuchen">
+      <nav class="katnav" aria-label="Bereiche"><a href="#angebot">Angebot &amp; Rechnung <small>6</small></a><a href="#material">Material &amp; Lager <small>8</small></a><a href="#baustelle">Baustelle &amp; Team <small>3</small></a><a href="#service">Wartung &amp; Service <small>4</small></a><a href="#planung">Planung &amp; Rechner <small>10</small></a><a href="#buero">Büro &amp; Geld <small>5</small></a><a href="#ki">KI-Mitarbeiter <small>1</small></a></nav>
+    </div>
+  </div>
+  <section class="kat" id="angebot">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">6 Funktionen</div><h2>Angebot &amp; Rechnung</h2><p>Vom ersten Gespräch bis zum bezahlten Auftrag.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="angebote angebote mit kalkulation, vorlagen und unterschrift – oder einfach eingesprochen. positionen mit einkaufspreis, listenpreis, aufschlag oder rabatt – optionen, alternativen, arbeitszeit und anfahrt vorlagen, bausteine und produktgruppen; aus einem anderen angebot übernehmen rohertrag und margenwarnung, hinweis auf den günstigeren einkauf, nachkalkulation pdf senden, zahlungsplan, abschlags- und schlussrechnung, nachfass-datum unterschrift direkt am gerät oder annahme per link ki: angebot aus deinem text, großhändler-angebot aus foto oder pdf einlesen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/angebote.jpg" data-src="assets/funktionen/angebote.mp4" aria-label="Bildschirmaufnahme der App: Angebote (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Angebote</h3><p class="pitch">Angebote mit Kalkulation, Vorlagen und Unterschrift – oder einfach eingesprochen.</p><ul><li>Positionen mit Einkaufspreis, Listenpreis, Aufschlag oder Rabatt – Optionen, Alternativen, Arbeitszeit und Anfahrt</li><li>Vorlagen, Bausteine und Produktgruppen; aus einem anderen Angebot übernehmen</li><li>Rohertrag und Margenwarnung, Hinweis auf den günstigeren Einkauf, Nachkalkulation</li><li>PDF senden, Zahlungsplan, Abschlags- und Schlussrechnung, Nachfass-Datum</li><li>Unterschrift direkt am Gerät oder Annahme per Link</li><li>KI: Angebot aus deinem Text, Großhändler-Angebot aus Foto oder PDF einlesen</li></ul></div>
+      </article>
+      <article class="fn" data-q="regie &amp; nachträge regieberichte und nachträge sauber festhalten – mit unterschrift des kunden. regiebericht pro tag mit zeiten, material und kilometern unterschrift des kunden direkt am handy nachträge mit begründung und freigabe (telefonisch oder per unterschrift) status: offen, abgelehnt, verrechnet">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/regie.jpg" data-src="assets/funktionen/regie.mp4" aria-label="Bildschirmaufnahme der App: Regie &amp; Nachträge (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Regie &amp; Nachträge</h3><p class="pitch">Regieberichte und Nachträge sauber festhalten – mit Unterschrift des Kunden.</p><ul><li>Regiebericht pro Tag mit Zeiten, Material und Kilometern</li><li>Unterschrift des Kunden direkt am Handy</li><li>Nachträge mit Begründung und Freigabe (telefonisch oder per Unterschrift)</li><li>Status: offen, abgelehnt, verrechnet</li></ul></div>
+      </article>
+      <article class="fn" data-q="rechnung aus dem auftrag material, stunden und kilometer laufen von selbst in die rechnung. zieht material, stunden, kilometer und angebotspreise zusammen rabatt als eigene zeile rechnungsnummer mit gerätekürzel, zahlschein-qr (epc/girocode) hinweis „übergang der steuerschuld“ für bauleistungen einfügbar (ob er zutrifft, entscheidest du) ki formuliert auf wunsch den betreff">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/rechnung.jpg" data-src="assets/funktionen/rechnung.mp4" aria-label="Bildschirmaufnahme der App: Rechnung aus dem Auftrag (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Rechnung aus dem Auftrag</h3><p class="pitch">Material, Stunden und Kilometer laufen von selbst in die Rechnung.</p><ul><li>Zieht Material, Stunden, Kilometer und Angebotspreise zusammen</li><li>Rabatt als eigene Zeile</li><li>Rechnungsnummer mit Gerätekürzel, Zahlschein-QR (EPC/Girocode)</li><li>Hinweis „Übergang der Steuerschuld“ für Bauleistungen einfügbar (ob er zutrifft, entscheidest du)</li><li>KI formuliert auf Wunsch den Betreff</li></ul></div>
+      </article>
+      <article class="fn" data-q="offene posten &amp; mahnwesen wer hat noch nicht bezahlt? auf einen blick – mit mahnlauf. offene posten, kassiert oder offen, rückgängig mahnwesen in drei stufen mit spesen und pdf bankauszug einlesen mit zuordnungsvorschlag (derzeit format raiffeisen elba) im app-menü heißt der bereich „kassieren“ – keine registrierkasse im sinne der rksv">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/kassa.jpg" data-src="assets/funktionen/kassa.mp4" aria-label="Bildschirmaufnahme der App: Offene Posten &amp; Mahnwesen (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Offene Posten &amp; Mahnwesen</h3><p class="pitch">Wer hat noch nicht bezahlt? Auf einen Blick – mit Mahnlauf.</p><ul><li>Offene Posten, kassiert oder offen, Rückgängig</li><li>Mahnwesen in drei Stufen mit Spesen und PDF</li><li>Bankauszug einlesen mit Zuordnungsvorschlag (derzeit Format Raiffeisen ELBA)</li><li>Im App-Menü heißt der Bereich „Kassieren“ – keine Registrierkasse im Sinne der RKSV</li></ul></div>
+      </article>
+      <article class="fn" data-q="wartungsvertrag wartungsverträge erstellen und später automatisch verrechnen. leistungsumfang, pauschale, wartungstakt und anfahrt textbaustein für die rücktrittsbelehrung (muster – vor verwendung prüfen) pdf zum unterschreiben der preis wird gemerkt und als wartungsrechnung verrechnet">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/vertrag.jpg" data-src="assets/funktionen/vertrag.mp4" aria-label="Bildschirmaufnahme der App: Wartungsvertrag (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Wartungsvertrag</h3><p class="pitch">Wartungsverträge erstellen und später automatisch verrechnen.</p><ul><li>Leistungsumfang, Pauschale, Wartungstakt und Anfahrt</li><li>Textbaustein für die Rücktrittsbelehrung (Muster – vor Verwendung prüfen)</li><li>PDF zum Unterschreiben</li><li>Der Preis wird gemerkt und als Wartungsrechnung verrechnet</li></ul></div>
+      </article>
+      <article class="fn" data-q="anschreiben fertige texte für die kunden-post – in sekunden. vorlagen: nachschau, wartung fällig, angebot nachfassen, termin bestätigen, offene rechnung legt auf wunsch gleich nachschau und wartung an">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/nachricht.jpg" data-src="assets/funktionen/nachricht.mp4" aria-label="Bildschirmaufnahme der App: Anschreiben (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Anschreiben</h3><p class="pitch">Fertige Texte für die Kunden-Post – in Sekunden.</p><ul><li>Vorlagen: Nachschau, Wartung fällig, Angebot nachfassen, Termin bestätigen, offene Rechnung</li><li>Legt auf Wunsch gleich Nachschau und Wartung an</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="kat" id="material">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">8 Funktionen</div><h2>Material &amp; Lager</h2><p>Wissen, was da ist – im Lager, im Bus und auf der Baustelle.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="lager &amp; bus bestand, materialkisten und bus-bestand in einem. bestand, kisten, buchen, fehlt, bus, verlauf materialkisten mit rüstliste und verbrauch aus der kiste regalplatz, umlagern, inventur durch zählen qr-lageretiketten als pdf, csv-import, bestelltage „was heute aus dem bus ging“ preise nur für den chef sichtbar (pin)">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/lager.jpg" data-src="assets/funktionen/lager.mp4" aria-label="Bildschirmaufnahme der App: Lager &amp; Bus (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Lager &amp; Bus</h3><p class="pitch">Bestand, Materialkisten und Bus-Bestand in einem.</p><ul><li>Bestand, Kisten, Buchen, Fehlt, Bus, Verlauf</li><li>Materialkisten mit Rüstliste und Verbrauch aus der Kiste</li><li>Regalplatz, Umlagern, Inventur durch Zählen</li><li>QR-Lageretiketten als PDF, CSV-Import, Bestelltage</li><li>„Was heute aus dem Bus ging“</li><li>Preise nur für den Chef sichtbar (PIN)</li></ul></div>
+      </article>
+      <article class="fn" data-q="lieferung wareneingang zählen, lieferschein abgleichen, einbuchen. erst zählen, was wirklich in der kiste liegt strichcode oder qr scannen lieferschein fotografieren – die ki liest ihn aus abgleich: mehr oder fehlt einbuchen ins lager oder direkt auf einen kunden">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/lieferung.jpg" data-src="assets/funktionen/lieferung.mp4" aria-label="Bildschirmaufnahme der App: Lieferung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Lieferung</h3><p class="pitch">Wareneingang zählen, Lieferschein abgleichen, einbuchen.</p><ul><li>Erst zählen, was wirklich in der Kiste liegt</li><li>Strichcode oder QR scannen</li><li>Lieferschein fotografieren – die KI liest ihn aus</li><li>Abgleich: mehr oder fehlt</li><li>Einbuchen ins Lager oder direkt auf einen Kunden</li></ul></div>
+      </article>
+      <article class="fn" data-q="scannen strichcode scannen, artikel finden, buchen. scanner für ean-8/13, code 128/39 und qr artikel suchen und mit ± buchen „scannen auf auftrag“ bucht direkt auf den kunden ki: nummer vom foto lesen, fitting erkennen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/scan.jpg" data-src="assets/funktionen/scan.mp4" aria-label="Bildschirmaufnahme der App: Scannen (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Scannen</h3><p class="pitch">Strichcode scannen, Artikel finden, buchen.</p><ul><li>Scanner für EAN-8/13, Code 128/39 und QR</li><li>Artikel suchen und mit ± buchen</li><li>„Scannen auf Auftrag“ bucht direkt auf den Kunden</li><li>KI: Nummer vom Foto lesen, Fitting erkennen</li></ul></div>
+      </article>
+      <article class="fn" data-q="großhändler-katalog datanorm einlesen und artikel in sekunden finden. datanorm-dateien deines großhändlers einlesen suche mit vorfilter und markenfilter rabattdatei, sammel-import übernahme ins lager">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/katalog.jpg" data-src="assets/funktionen/katalog.mp4" aria-label="Bildschirmaufnahme der App: Großhändler-Katalog (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Großhändler-Katalog</h3><p class="pitch">Datanorm einlesen und Artikel in Sekunden finden.</p><ul><li>Datanorm-Dateien deines Großhändlers einlesen</li><li>Suche mit Vorfilter und Markenfilter</li><li>Rabattdatei, Sammel-Import</li><li>Übernahme ins Lager</li></ul></div>
+      </article>
+      <article class="fn" data-q="aktionspreise aktionen des großhändlers im blick – direkt im angebot. aktionspreise mit ablaufdatum hinweis „günstiger“ direkt in der angebotsposition">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/aktionen.jpg" data-src="assets/funktionen/aktionen.mp4" aria-label="Bildschirmaufnahme der App: Aktionspreise (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Aktionspreise</h3><p class="pitch">Aktionen des Großhändlers im Blick – direkt im Angebot.</p><ul><li>Aktionspreise mit Ablaufdatum</li><li>Hinweis „günstiger“ direkt in der Angebotsposition</li></ul></div>
+      </article>
+      <article class="fn" data-q="aufmaß material vor ort nach bereichen erfassen. erfassen nach bereichen und gewerken über 60 marken als filter suche in lager, eigenen artikeln und katalog auf den kunden buchen oder ins angebot übernehmen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/aufmass.jpg" data-src="assets/funktionen/aufmass.mp4" aria-label="Bildschirmaufnahme der App: Aufmaß (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Aufmaß</h3><p class="pitch">Material vor Ort nach Bereichen erfassen.</p><ul><li>Erfassen nach Bereichen und Gewerken</li><li>Über 60 Marken als Filter</li><li>Suche in Lager, eigenen Artikeln und Katalog</li><li>Auf den Kunden buchen oder ins Angebot übernehmen</li></ul></div>
+      </article>
+      <article class="fn" data-q="werkzeug &amp; prüfungen wo ist welches gerät – und wann ist die nächste prüfung? ausgabe und rücknahme an person oder baustelle, mit verlauf prüffristen: fällig und überfällig werkzeug-etiketten mit qr als pdf">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/werkzeug.jpg" data-src="assets/funktionen/werkzeug.mp4" aria-label="Bildschirmaufnahme der App: Werkzeug &amp; Prüfungen (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Werkzeug &amp; Prüfungen</h3><p class="pitch">Wo ist welches Gerät – und wann ist die nächste Prüfung?</p><ul><li>Ausgabe und Rücknahme an Person oder Baustelle, mit Verlauf</li><li>Prüffristen: fällig und überfällig</li><li>Werkzeug-Etiketten mit QR als PDF</li></ul></div>
+      </article>
+      <article class="fn" data-q="arbeitskleidung größen, ausgabe und mängel der arbeitskleidung. größen je mitarbeiter neues beantragen und ausgeben mängel melden">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/gewand.jpg" data-src="assets/funktionen/gewand.mp4" aria-label="Bildschirmaufnahme der App: Arbeitskleidung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Arbeitskleidung</h3><p class="pitch">Größen, Ausgabe und Mängel der Arbeitskleidung.</p><ul><li>Größen je Mitarbeiter</li><li>Neues beantragen und ausgeben</li><li>Mängel melden</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="kat" id="baustelle">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">3 Funktionen</div><h2>Baustelle &amp; Team</h2><p>Alles zum Kunden an einem Platz – und das Team am selben Stand.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="kunden &amp; aufträge der ordner pro kunde: angebot, rechnung, fotos, geräte, protokolle. auftragstafel: anfrage → angebot → auftrag → in arbeit → abrechnen → erledigt kundenordner mit angeboten, rechnungen, fotos, geräten (anlagenbuch) und protokollen verlauf, der sich selbst schreibt bautagebuch als pdf, besprechungsprotokoll mit unterschrift kunden-update am abend mit fotos (über whatsapp oder teilen) kundenkarte als qr">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/ordner.jpg" data-src="assets/funktionen/ordner.mp4" aria-label="Bildschirmaufnahme der App: Kunden &amp; Aufträge (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Kunden &amp; Aufträge</h3><p class="pitch">Der Ordner pro Kunde: Angebot, Rechnung, Fotos, Geräte, Protokolle.</p><ul><li>Auftragstafel: Anfrage → Angebot → Auftrag → In Arbeit → Abrechnen → Erledigt</li><li>Kundenordner mit Angeboten, Rechnungen, Fotos, Geräten (Anlagenbuch) und Protokollen</li><li>Verlauf, der sich selbst schreibt</li><li>Bautagebuch als PDF, Besprechungsprotokoll mit Unterschrift</li><li>Kunden-Update am Abend mit Fotos (über WhatsApp oder Teilen)</li><li>Kundenkarte als QR</li></ul></div>
+      </article>
+      <article class="fn" data-q="zeiterfassung &amp; fahrten stunden mit timer, kilometer und stundenzettel. timer starten und stoppen oder zeit nachtragen kilometer und tätigkeit stunden pro kunde stundenzettel und fahrtenaufzeichnung als pdf (ob sie dem finanzamt als fahrtenbuch reicht, klärt deine kanzlei)">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/zeiten.jpg" data-src="assets/funktionen/zeiten.mp4" aria-label="Bildschirmaufnahme der App: Zeiterfassung &amp; Fahrten (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Zeiterfassung &amp; Fahrten</h3><p class="pitch">Stunden mit Timer, Kilometer und Stundenzettel.</p><ul><li>Timer starten und stoppen oder Zeit nachtragen</li><li>Kilometer und Tätigkeit</li><li>Stunden pro Kunde</li><li>Stundenzettel und Fahrtenaufzeichnung als PDF (ob sie dem Finanzamt als Fahrtenbuch reicht, klärt deine Kanzlei)</li></ul></div>
+      </article>
+      <article class="fn" data-q="checklisten &amp; protokolle wartung, inbetriebnahme und dichtheit – mit unterschrift. prüfpunkte, messwerte, fotos unterschrift von kunde und monteur pdf senden, folgetermin anlegen ki: typenschild fotografieren und auslesen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/checklisten.jpg" data-src="assets/funktionen/checklisten.mp4" aria-label="Bildschirmaufnahme der App: Checklisten &amp; Protokolle (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Checklisten &amp; Protokolle</h3><p class="pitch">Wartung, Inbetriebnahme und Dichtheit – mit Unterschrift.</p><ul><li>Prüfpunkte, Messwerte, Fotos</li><li>Unterschrift von Kunde und Monteur</li><li>PDF senden, Folgetermin anlegen</li><li>KI: Typenschild fotografieren und auslesen</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="kat" id="service">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">4 Funktionen</div><h2>Wartung &amp; Service</h2><p>Wartungen planen, protokollieren, verrechnen.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="klimawartung klimaprotokoll mit f-gas-angaben und wartungslauf. drücke, temperaturen, füllmenge, f-gase / co₂-äquivalent prüfintervall-vorschlag angelehnt an vo (eu) 2024/573 fotos, zwei unterschriften, pdf senden jahresplaner und wartungslauf: fällige anlagen ankreuzen → termine und anschreiben in einem zug ki: typenschild lesen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/klimawartung.jpg" data-src="assets/funktionen/klimawartung.mp4" aria-label="Bildschirmaufnahme der App: Klimawartung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Klimawartung</h3><p class="pitch">Klimaprotokoll mit F-Gas-Angaben und Wartungslauf.</p><ul><li>Drücke, Temperaturen, Füllmenge, F-Gase / CO₂-Äquivalent</li><li>Prüfintervall-Vorschlag angelehnt an VO (EU) 2024/573</li><li>Fotos, zwei Unterschriften, PDF senden</li><li>Jahresplaner und Wartungslauf: fällige Anlagen ankreuzen → Termine und Anschreiben in einem Zug</li><li>KI: Typenschild lesen</li></ul></div>
+      </article>
+      <article class="fn" data-q="termine &amp; wartungen erinnerungen, folgetermine – und termine, die der kunde selbst wählt. erinnerungen mit folgetermin export in den handykalender (.ics) einladung: der kunde wählt seinen termin selbst, du bestätigst mit ja/nein">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/termine.jpg" data-src="assets/funktionen/termine.mp4" aria-label="Bildschirmaufnahme der App: Termine &amp; Wartungen (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-net">Braucht Internet</span></div><h3>Termine &amp; Wartungen</h3><p class="pitch">Erinnerungen, Folgetermine – und Termine, die der Kunde selbst wählt.</p><ul><li>Erinnerungen mit Folgetermin</li><li>Export in den Handykalender (.ics)</li><li>Einladung: der Kunde wählt seinen Termin selbst, du bestätigst mit Ja/Nein</li></ul></div>
+      </article>
+      <article class="fn" data-q="übergabemappe fünf seiten für den kunden: notfall, geräte, werte, wartung. notfallblatt: wo absperren geräte und eingestellte werte heizkreise und stromkreise wartungshinweise, alles als pdf">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/mappe.jpg" data-src="assets/funktionen/mappe.mp4" aria-label="Bildschirmaufnahme der App: Übergabemappe (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Übergabemappe</h3><p class="pitch">Fünf Seiten für den Kunden: Notfall, Geräte, Werte, Wartung.</p><ul><li>Notfallblatt: wo absperren</li><li>Geräte und eingestellte Werte</li><li>Heizkreise und Stromkreise</li><li>Wartungshinweise, alles als PDF</li></ul></div>
+      </article>
+      <article class="fn" data-q="abgleich &amp; dichtheitsprüfung hydraulischer abgleich und druckprobe als protokoll. hydraulischer abgleich je heizkreis protokollvorlagen für die dichtheitsprüfung, orientiert an önorm en 1264-4, en 14336, en 806-4 (wasser oder luft) protokoll als pdf">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/protokoll.jpg" data-src="assets/funktionen/protokoll.mp4" aria-label="Bildschirmaufnahme der App: Abgleich &amp; Dichtheitsprüfung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Abgleich &amp; Dichtheitsprüfung</h3><p class="pitch">Hydraulischer Abgleich und Druckprobe als Protokoll.</p><ul><li>Hydraulischer Abgleich je Heizkreis</li><li>Protokollvorlagen für die Dichtheitsprüfung, orientiert an ÖNORM EN 1264-4, EN 14336, EN 806-4 (Wasser oder Luft)</li><li>Protokoll als PDF</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="kat" id="planung">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">10 Funktionen</div><h2>Planung &amp; Rechner</h2><p>Die Rechner und Pläne, die du ohnehin brauchst.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="heizlast heizlast schätzen oder raumweise rechnen. haus schätzen oder raumweise mit u-werten und luftwechsel empfehlung für den wärmeerzeuger vereinfachtes verfahren – keine zertifizierte normberechnung">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/heizlast.jpg" data-src="assets/funktionen/heizlast.mp4" aria-label="Bildschirmaufnahme der App: Heizlast (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Heizlast</h3><p class="pitch">Heizlast schätzen oder raumweise rechnen.</p><ul><li>Haus schätzen oder raumweise mit U-Werten und Luftwechsel</li><li>Empfehlung für den Wärmeerzeuger</li><li>Vereinfachtes Verfahren – keine zertifizierte Normberechnung</li></ul></div>
+      </article>
+      <article class="fn" data-q="anlagenplanung vom raum bis zur hydraulik – ein projekt, ein pdf. räume, heizlast (vereinfachte abschätzung in anlehnung an en 12831 – keine normberechnung), bestand, neue anlage, erzeuger, hydraulik heizraum, aufstellung, wandansicht, badplaner mit bewegungsflächen norm-außentemperatur nach postleitzahl, heizkurve, rohrdimension pdf und übergabe ins angebot ki: heizraum aus einem foto lesen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/planung.jpg" data-src="assets/funktionen/planung.mp4" aria-label="Bildschirmaufnahme der App: Anlagenplanung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Anlagenplanung</h3><p class="pitch">Vom Raum bis zur Hydraulik – ein Projekt, ein PDF.</p><ul><li>Räume, Heizlast (vereinfachte Abschätzung in Anlehnung an EN 12831 – keine Normberechnung), Bestand, neue Anlage, Erzeuger, Hydraulik</li><li>Heizraum, Aufstellung, Wandansicht, Badplaner mit Bewegungsflächen</li><li>Norm-Außentemperatur nach Postleitzahl, Heizkurve, Rohrdimension</li><li>PDF und Übergabe ins Angebot</li><li>KI: Heizraum aus einem Foto lesen</li></ul></div>
+      </article>
+      <article class="fn" data-q="heizraumplaner die wand maßstäblich: geräte, anschlüsse, leitungen. wandansicht im maßstab mit höhen ab fertigfußboden geräte, anschlüsse, leitungen, tür pdf und materialliste ins angebot ki: datenblatt lesen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/wandplan.jpg" data-src="assets/funktionen/wandplan.mp4" aria-label="Bildschirmaufnahme der App: Heizraumplaner (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Heizraumplaner</h3><p class="pitch">Die Wand maßstäblich: Geräte, Anschlüsse, Leitungen.</p><ul><li>Wandansicht im Maßstab mit Höhen ab Fertigfußboden</li><li>Geräte, Anschlüsse, Leitungen, Tür</li><li>PDF und Materialliste ins Angebot</li><li>KI: Datenblatt lesen</li></ul></div>
+      </article>
+      <article class="fn" data-q="wasserverteilung verteiler und leitungen für die trinkwasser-installation planen. maßstäblicher plan wie im heizraumplaner pdf und materialliste">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/wasserplan.jpg" data-src="assets/funktionen/wasserplan.mp4" aria-label="Bildschirmaufnahme der App: Wasserverteilung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Wasserverteilung</h3><p class="pitch">Verteiler und Leitungen für die Trinkwasser-Installation planen.</p><ul><li>Maßstäblicher Plan wie im Heizraumplaner</li><li>PDF und Materialliste</li></ul></div>
+      </article>
+      <article class="fn" data-q="fachrechner ausdehnungsgefäß bis estrich – die rechner für jeden tag. ausdehnungsgefäß, volumenstrom, rohrdimension, rohrinhalt heizkörper δt, mischungskreuz, speicher-aufheizung estrich-aufheizen und belegreife, abwasser-gefälle, gas/öl → leistung „was rechnet sich?“ – amortisation als pdf">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/rechner.jpg" data-src="assets/funktionen/rechner.mp4" aria-label="Bildschirmaufnahme der App: Fachrechner (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Fachrechner</h3><p class="pitch">Ausdehnungsgefäß bis Estrich – die Rechner für jeden Tag.</p><ul><li>Ausdehnungsgefäß, Volumenstrom, Rohrdimension, Rohrinhalt</li><li>Heizkörper ΔT, Mischungskreuz, Speicher-Aufheizung</li><li>Estrich-Aufheizen und Belegreife, Abwasser-Gefälle, Gas/Öl → Leistung</li><li>„Was rechnet sich?“ – Amortisation als PDF</li></ul></div>
+      </article>
+      <article class="fn" data-q="klima &amp; kälte kühllast, füllmenge und f-gase. kühllast füllmenge und nachfüllung f-gase / co₂-äquivalent, richtwert raumgrenze für a2l/a3 (herstellerangaben und norm gehen vor) kältemittel und montagewerte">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/klima.jpg" data-src="assets/funktionen/klima.mp4" aria-label="Bildschirmaufnahme der App: Klima &amp; Kälte (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Klima &amp; Kälte</h3><p class="pitch">Kühllast, Füllmenge und F-Gase.</p><ul><li>Kühllast</li><li>Füllmenge und Nachfüllung</li><li>F-Gase / CO₂-Äquivalent, Richtwert Raumgrenze für A2L/A3 (Herstellerangaben und Norm gehen vor)</li><li>Kältemittel und Montagewerte</li></ul></div>
+      </article>
+      <article class="fn" data-q="fußbodenheizung rohrbedarf, verlegeabstand und kreise. rohrbedarf und rollen verlegeabstand und anzahl der kreise schnecke oder mäander, randzone">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/fbh.jpg" data-src="assets/funktionen/fbh.mp4" aria-label="Bildschirmaufnahme der App: Fußbodenheizung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Fußbodenheizung</h3><p class="pitch">Rohrbedarf, Verlegeabstand und Kreise.</p><ul><li>Rohrbedarf und Rollen</li><li>Verlegeabstand und Anzahl der Kreise</li><li>Schnecke oder Mäander, Randzone</li></ul></div>
+      </article>
+      <article class="fn" data-q="wochenplaner partien und termine für die ganze woche. termine mit uhrzeit, partien mit farbe, kalenderansicht tagesroute mit kartenlink, „termin finden“">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/planer.jpg" data-src="assets/funktionen/planer.mp4" aria-label="Bildschirmaufnahme der App: Wochenplaner (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Wochenplaner</h3><p class="pitch">Partien und Termine für die ganze Woche.</p><ul><li>Termine mit Uhrzeit, Partien mit Farbe, Kalenderansicht</li><li>Tagesroute mit Kartenlink, „Termin finden“</li></ul></div>
+      </article>
+      <article class="fn" data-q="pläne &amp; datenblätter hydraulik-, elektro- und badpläne geordnet ablegen. pläne und datenblätter in ordnern beschriften und suchen">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/plaene.jpg" data-src="assets/funktionen/plaene.mp4" aria-label="Bildschirmaufnahme der App: Pläne &amp; Datenblätter (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Pläne &amp; Datenblätter</h3><p class="pitch">Hydraulik-, Elektro- und Badpläne geordnet ablegen.</p><ul><li>Pläne und Datenblätter in Ordnern</li><li>Beschriften und suchen</li></ul></div>
+      </article>
+      <article class="fn" data-q="schilder &amp; beschriftung rohrschilder, verteiler- und geräte-beschriftung als pdf. rohrschilder 70 × 50,8 mm in drei stilen, mit fließpfeil und eigenem logo verteiler-blatt für fußbodenheizung oder stromverteiler anlagenteile-kennzeichnung nach schaltplan prüf- und mag-plaketten, werbeaufkleber">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/schilder.jpg" data-src="assets/funktionen/schilder.mp4" aria-label="Bildschirmaufnahme der App: Schilder &amp; Beschriftung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Schilder &amp; Beschriftung</h3><p class="pitch">Rohrschilder, Verteiler- und Geräte-Beschriftung als PDF.</p><ul><li>Rohrschilder 70 × 50,8 mm in drei Stilen, mit Fließpfeil und eigenem Logo</li><li>Verteiler-Blatt für Fußbodenheizung oder Stromverteiler</li><li>Anlagenteile-Kennzeichnung nach Schaltplan</li><li>Prüf- und MAG-Plaketten, Werbeaufkleber</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="kat" id="buero">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">5 Funktionen</div><h2>Büro &amp; Geld</h2><p>Belege, Zahlen und Tagesabschluss – ohne Zettelwirtschaft.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="finanzen einnahmen, ausgaben und was in vier wochen am konto ist. einnahmen und ausgaben je monat, fixkosten liquiditätsvorschau über 4 wochen uva-vorbereitung für die kanzlei (keine steuerberatung) export der buchungen für die kanzlei">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/finanzen.jpg" data-src="assets/funktionen/finanzen.mp4" aria-label="Bildschirmaufnahme der App: Finanzen (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Finanzen</h3><p class="pitch">Einnahmen, Ausgaben und was in vier Wochen am Konto ist.</p><ul><li>Einnahmen und Ausgaben je Monat, Fixkosten</li><li>Liquiditätsvorschau über 4 Wochen</li><li>UVA-Vorbereitung für die Kanzlei (keine Steuerberatung)</li><li>Export der Buchungen für die Kanzlei</li></ul></div>
+      </article>
+      <article class="fn" data-q="belege rechnungen fotografieren – die ki liest die zahlen. belege fotografieren oder als pdf ablegen ki liest lieferant, datum, netto und umsatzsteuer sammel-pdf und archiv mit prüfsumme für die kanzlei">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/belege.jpg" data-src="assets/funktionen/belege.mp4" aria-label="Bildschirmaufnahme der App: Belege (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Belege</h3><p class="pitch">Rechnungen fotografieren – die KI liest die Zahlen.</p><ul><li>Belege fotografieren oder als PDF ablegen</li><li>KI liest Lieferant, Datum, Netto und Umsatzsteuer</li><li>Sammel-PDF und Archiv mit Prüfsumme für die Kanzlei</li></ul></div>
+      </article>
+      <article class="fn" data-q="tagesabschluss was heute noch fehlt – bevor du heimfährst. fehlende stunden, material, kisten unterwegs kassiert und offen was morgen ansteht tagesbericht kopieren">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/tagesabschluss.jpg" data-src="assets/funktionen/tagesabschluss.mp4" aria-label="Bildschirmaufnahme der App: Tagesabschluss (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Tagesabschluss</h3><p class="pitch">Was heute noch fehlt – bevor du heimfährst.</p><ul><li>Fehlende Stunden, Material, Kisten unterwegs</li><li>Kassiert und offen</li><li>Was morgen ansteht</li><li>Tagesbericht kopieren</li></ul></div>
+      </article>
+      <article class="fn" data-q="auswertung der monat in zahlen. stunden, umsatz-schätzung, material lagerwert und unterbestand">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/statistik.jpg" data-src="assets/funktionen/statistik.mp4" aria-label="Bildschirmaufnahme der App: Auswertung (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span></div><h3>Auswertung</h3><p class="pitch">Der Monat in Zahlen.</p><ul><li>Stunden, Umsatz-Schätzung, Material</li><li>Lagerwert und Unterbestand</li></ul></div>
+      </article>
+      <article class="fn" data-q="merkzettel aufgaben, fotos und sprachnotizen – direkt zum lager. aufgaben mit termin und wichtig-markierung, fotos zettel gegen das lager prüfen und daraus bestellen sprachnotiz wird zum zettel">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/notizen.jpg" data-src="assets/funktionen/notizen.mp4" aria-label="Bildschirmaufnahme der App: Merkzettel (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Merkzettel</h3><p class="pitch">Aufgaben, Fotos und Sprachnotizen – direkt zum Lager.</p><ul><li>Aufgaben mit Termin und Wichtig-Markierung, Fotos</li><li>Zettel gegen das Lager prüfen und daraus bestellen</li><li>Sprachnotiz wird zum Zettel</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="kat" id="ki">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">1 Funktion</div><h2>KI-Mitarbeiter</h2><p>Die KI macht Vorschläge – du entscheidest.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="fach-assistent fragen zu normen, auslegung und fehlersuche – mit blick auf dein lager. fach-chat, der lager, kunden, aufträge und termine kennt beispielfragen zum antippen ki-antworten können fehler enthalten – du prüfst sie selbst dazu ki in den bereichen: belege, lieferschein, typenschild, fitting, datenblatt, heizraum-foto, angebot aus text">
+        <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/ki.jpg" data-src="assets/funktionen/ki.mp4" aria-label="Bildschirmaufnahme der App: Fach-Assistent (Demodaten)"></video></div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-net">Braucht Internet</span><span class="bdg b-ki">mit KI</span></div><h3>Fach-Assistent</h3><p class="pitch">Fragen zu Normen, Auslegung und Fehlersuche – mit Blick auf dein Lager.</p><ul><li>Fach-Chat, der Lager, Kunden, Aufträge und Termine kennt</li><li>Beispielfragen zum Antippen</li><li>KI-Antworten können Fehler enthalten – du prüfst sie selbst</li><li>Dazu KI in den Bereichen: Belege, Lieferschein, Typenschild, Fitting, Datenblatt, Heizraum-Foto, Angebot aus Text</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <p class="leer-msg" id="leer">Nichts gefunden. Probier ein anderes Wort – oder frag uns direkt.</p>
+  <div class="wrap cta-end">
+    <h2>Willst du's live sehen?</h2>
+    <p class="lead" style="margin:0 auto 26px">In der Vorführung zeigen wir dir die Funktionen an deinen eigenen Abläufen.</p>
+    <a class="btn btn-gold" href="index.html#pilot">Pilotplatz anfragen →</a>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/icon-clear.png" alt=""><span>INSTALLATEUR-ZENTRALE</span></a>
+    <span>© 2026 · App-Aufnahmen aus dem Vorführmodus mit Demodaten. DATEV, DATANORM, WhatsApp, ELBA sowie in den Demodaten gezeigte Hersteller- und Lieferantennamen sind Marken bzw. Namen ihrer Inhaber – keine Partnerschaft oder Empfehlung. Preise in den Demodaten sind erfunden.</span>
+    <nav><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+  </div>
+</footer>
+<script>
+(function(){
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Videos laden und spielen nur, solange sie im Bild sind
+  var vo = new IntersectionObserver(function(es){ es.forEach(function(e){ var v = e.target;
+    if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; if (!reduce) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } }
+    else if (!v.paused) v.pause(); }); }, {rootMargin: "200px 0px", threshold: .25});
+  document.querySelectorAll("video[data-src]").forEach(function(v){ vo.observe(v); });
+  // Suche
+  var q = document.getElementById("q"), cards = document.querySelectorAll(".fn"), kats = document.querySelectorAll(".kat"), leer = document.getElementById("leer");
+  q.addEventListener("input", function(){
+    var t = q.value.trim().toLowerCase(), n = 0;
+    cards.forEach(function(c){ var hit = !t || c.dataset.q.indexOf(t) >= 0; c.hidden = !hit; if (hit) n++; });
+    kats.forEach(function(k){ k.hidden = !k.querySelector(".fn:not([hidden])"); });
+    leer.style.display = n ? "none" : "block";
+  });
+  // aktiven Bereich in der Leiste markieren
+  var links = document.querySelectorAll(".katnav a");
+  var ko = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) links.forEach(function(a){ a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id); if (a.classList.contains("on")) a.scrollIntoView({block:"nearest", inline:"center"}); }); }); }, {rootMargin: "-40% 0px -55% 0px"});
+  kats.forEach(function(k){ ko.observe(k); });
+})();
+</script>
+</body>
+</html>
