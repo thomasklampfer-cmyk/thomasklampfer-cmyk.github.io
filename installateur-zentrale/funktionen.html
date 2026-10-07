@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Funktionen – Installateur-Zentrale</title>
-<meta name="description" content="Alle 37 Funktionen der Installateur-Zentrale erklärt – mit echten Bildschirmaufnahmen: Angebote, Lager, Lieferung, Klimawartung, Heizlast, Fachrechner, Belege und mehr.">
+<meta name="description" content="Alle 38 Funktionen der Installateur-Zentrale erklärt – mit echten Bildschirmaufnahmen: Angebote, Lager, Lieferung, Klimawartung, Heizlast, Fachrechner, Belege und mehr.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/img/icon-clear.png">
 <style>
@@ -102,6 +102,31 @@ footer a{color:#c7d1e6}
 .b-net{color:#9cc2ff;border-color:rgba(11,77,162,.7);background:rgba(11,77,162,.18)}
 .b-ki{color:var(--gold2);border-color:rgba(255,201,97,.55);background:rgba(255,201,97,.1)}
 @media (max-width:560px){.fn{grid-template-columns:1fr;padding:18px}.ph{width:min(220px,70%);justify-self:center}}
+.shopmock{position:relative;align-self:start;border-radius:18px;overflow:hidden;background:#f3f5f8;border:1px solid rgba(255,255,255,.16);box-shadow:0 24px 60px rgba(0,0,0,.55);color:#1c2530;font:500 11px/1.35 var(--body);padding-bottom:8px}
+.sm-bar{display:flex;gap:4px;align-items:center;padding:7px 8px;background:#dfe4ec}
+.sm-bar i{width:7px;height:7px;border-radius:50%;background:#b7c0cf}
+.sm-bar span{margin-left:6px;padding:2px 8px;border-radius:6px;background:#fff;color:#5b6678;font-size:10px;white-space:nowrap;overflow:hidden}
+.sm-row{position:relative;margin:8px 8px 0;padding:8px 8px 8px 9px;border-radius:8px;background:#fff;border:1px solid #e3e7ee;display:grid;gap:2px;padding-right:74px}
+.sm-row b{font-weight:600}
+.sm-row small{color:#6b7689;font-size:10px}
+.sm-btn{position:absolute;right:7px;top:50%;transform:translateY(-50%);padding:5px 8px;border-radius:999px;background:#0b4da2;color:#fff;font-weight:700;font-size:10px;white-space:nowrap}
+.sm-row:nth-of-type(2) .sm-btn{animation:smk 6s infinite 0.8s}
+.sm-row:nth-of-type(3) .sm-btn{animation:smk 6s infinite 1.8s}
+.sm-row:nth-of-type(5) .sm-btn{animation:smk 6s infinite 2.8s}
+@keyframes smk{0%,8%{background:#0b4da2;transform:translateY(-50%) scale(1)}4%{transform:translateY(-50%) scale(.9)}9%,60%{background:#17855a}61%,100%{background:#0b4da2}}
+.sm-korb{margin:10px 8px 0;padding:8px;border-radius:8px;background:#0b2545;color:#fff;font-weight:700;text-align:center;font-size:11px}
+.sm-n::before{content:"0";animation:smn 6s infinite steps(1)}
+@keyframes smn{0%{content:"0"}14%{content:"1"}30%{content:"2"}47%{content:"3"}62%{content:"0"}}
+.sm-cap{margin:8px 8px 0;color:#6b7689;font-size:10px;text-align:center}
+@media (prefers-reduced-motion:reduce){.sm-btn,.sm-n::before{animation:none}}
+.ablauf{padding:40px 0 30px}
+.steps8{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.steps8 li{counter-increment:s;position:relative;padding:22px 20px 20px;border-radius:22px;background:linear-gradient(160deg,rgba(28,36,62,.75),rgba(12,16,30,.92));border:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.steps8 li::before{content:counter(s,decimal-leading-zero);font:700 34px/1 var(--head);color:var(--gold);text-shadow:0 0 24px rgba(255,180,60,.4)}
+.steps8 b{font:700 24px/1.05 var(--head);text-transform:uppercase}
+.steps8 span{color:#c7d1e6;font-size:15px}
+@media (max-width:1000px){.steps8{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps8{grid-template-columns:1fr}}
 .leer-msg{display:none;padding:60px 0;text-align:center;color:var(--muted)}
 .cta-end{margin:80px auto 0;text-align:center;padding:60px 20px;border-top:1px solid var(--line)}
 .cta-end h2{margin-bottom:20px}
@@ -124,16 +149,32 @@ footer a{color:#c7d1e6}
   <section class="page-h">
     <div class="wrap">
       <div class="eyebrow">Funktionen</div>
-      <h1>Alle <em>37</em> Funktionen.</h1>
+      <h1>Alle <em>38</em> Funktionen.</h1>
       <div class="rule"></div>
       <p class="lead">Jede Funktion der Installateur-Zentrale kurz erklärt – mit einer echten Bildschirmaufnahme aus der App. Tippe auf einen Bereich oder such einfach nach dem, was du brauchst.</p>
       <p class="hinweis">Aufnahmen aus dem Vorführmodus mit erfundenen Demodaten. Die App ist in der Testphase; Funktionsumfang bis zum Marktstart vorbehalten. „Offline“ heißt: geht auch ohne Netz und gleicht später ab. KI-Funktionen brauchen Internet, und ihre Vorschläge prüfst du selbst.</p>
     </div>
   </section>
+  <section class="ablauf" id="angebot-ablauf">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">Schritt für Schritt</div><h2>So entsteht ein Angebot.</h2><p>Vom ersten Satz bis zur Rechnung – so läuft es in der Installateur-Zentrale.</p></div>
+      <ol class="steps8">
+        <li><b>Starten</b><span>„Neues Angebot“, eine Vorlage (z. B. Badsanierung komplett) oder „Angebot diktieren“. Nummer, Gültigkeit, Texte und Preisgrundlage sind schon vorbelegt.</span></li>
+        <li><b>Kunde antippen</b><span>Aus der Kartei: Name, Anschrift und Telefon kommen mit. Steht beim Kunden Reverse Charge, stellt die App das gleich mit um.</span></li>
+        <li><b>Alles rein ins Angebot</b><span>Einsprechen und die KI macht Positionen aus deinem Material und deinen Preisen – oder Produktgruppen, Bausteine, „Aus anderem Angebot“, den Korb aus dem Shop-Knopf oder ein Großhändler-Angebot vom Foto einlesen.</span></li>
+        <li><b>Preise oben anpassen</b><span>Preisgrundlage wählen – Einkauf plus Aufschlag oder Listenpreis minus Rabatt – Prozent eintragen, „Preise neu berechnen“. Einzelne Positionen lassen sich trotzdem fein einstellen.</span></li>
+        <li><b>Mit KI sortieren</b><span>„Aufbau verbessern“: Die KI ordnet die Positionen nach Gewerk oder Bauabschnitt und setzt Überschriften – Texte und Preise bleiben, wie sie sind. „Text verbessern“ formuliert kundentauglich, „Namen kürzen“ macht lange Artikelnamen lesbar.</span></li>
+        <li><b>Kalkulation im Blick</b><span>Marge je Position, Warnung unter deiner Untergrenze, Hinweis auf günstigeren Einkauf, gestiegene Einkaufspreise nachziehen, Summe glätten oder auf einen Zielpreis setzen.</span></li>
+        <li><b>Prüfen und senden</b><span>„Durchsehen“ findet Lücken wie Preis null oder fehlenden Kunden. Dann als PDF senden – das Nachfass-Datum setzt die App von selbst.</span></li>
+        <li><b>Annahme → Auftrag → Rechnung</b><span>Der Kunde unterschreibt am Handy oder nimmt per Link an; daraus wird der Auftrag. Abschlags- und Schlussrechnung entstehen aus dem Angebot.</span></li>
+      </ol>
+      <p class="hinweis">Die KI macht Vorschläge – du prüfst das Ergebnis, bevor das Angebot hinausgeht. KI-Funktionen brauchen Internet.</p>
+    </div>
+  </section>
   <div class="tools">
     <div class="wrap">
       <input type="search" id="q" placeholder="Funktion suchen, z. B. Wartung, PDF, Datanorm …" aria-label="Funktionen durchsuchen">
-      <nav class="katnav" aria-label="Bereiche"><a href="#angebot">Angebot &amp; Rechnung <small>6</small></a><a href="#material">Material &amp; Lager <small>8</small></a><a href="#baustelle">Baustelle &amp; Team <small>3</small></a><a href="#service">Wartung &amp; Service <small>4</small></a><a href="#planung">Planung &amp; Rechner <small>10</small></a><a href="#buero">Büro &amp; Geld <small>5</small></a><a href="#ki">KI-Mitarbeiter <small>1</small></a></nav>
+      <nav class="katnav" aria-label="Bereiche"><a href="#angebot-ablauf">So entsteht ein Angebot</a><a href="#angebot">Angebot &amp; Rechnung <small>6</small></a><a href="#material">Material &amp; Lager <small>8</small></a><a href="#baustelle">Baustelle &amp; Team <small>3</small></a><a href="#service">Wartung &amp; Service <small>4</small></a><a href="#planung">Planung &amp; Rechner <small>10</small></a><a href="#buero">Büro &amp; Geld <small>5</small></a><a href="#pc">Am PC: Shop-Knopf <small>1</small></a><a href="#ki">KI-Mitarbeiter <small>1</small></a></nav>
     </div>
   </div>
   <section class="kat" id="angebot">
@@ -318,6 +359,25 @@ footer a{color:#c7d1e6}
       <article class="fn" data-q="merkzettel aufgaben, fotos und sprachnotizen – direkt zum lager. aufgaben mit termin und wichtig-markierung, fotos zettel gegen das lager prüfen und daraus bestellen sprachnotiz wird zum zettel">
         <div class="ph"><video muted loop playsinline preload="none" poster="assets/funktionen/notizen.jpg" data-src="assets/funktionen/notizen.mp4" aria-label="Bildschirmaufnahme der App: Merkzettel (Demodaten)"></video></div>
         <div class="fn-t"><div class="bdgs"><span class="bdg b-off">Offline</span><span class="bdg b-ki">mit KI</span></div><h3>Merkzettel</h3><p class="pitch">Aufgaben, Fotos und Sprachnotizen – direkt zum Lager.</p><ul><li>Aufgaben mit Termin und Wichtig-Markierung, Fotos</li><li>Zettel gegen das Lager prüfen und daraus bestellen</li><li>Sprachnotiz wird zum Zettel</li></ul></div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <section class="kat" id="pc">
+    <div class="wrap">
+      <div class="kat-h"><div class="eyebrow">1 Funktion</div><h2>Am PC: Shop-Knopf</h2><p>Die Brücke zwischen dem Online-Shop deines Großhändlers und der App.</p></div>
+      <div class="grid">
+      <article class="fn" data-q="shop-knopf für chrome artikel direkt aus dem online-shop deines großhändlers ins angebot – mit einem klick. erweiterung für chrome am pc: hängt im online-shop zu jedem artikel einen knopf „+ angebot“ name, artikelnummer, einheit und einkaufspreis landen im korb und gehen mit einem klick ins angebot („aus dem shop“) lieferscheine aus den vorgängen im shop holen – die app zeigt nur, was noch nicht eingebucht ist bestelltabellen mit sollmengen und preisen als materialkisten ins lager übernehmen kein fremder server dazwischen: übergeben wird direkt an deine app erkennt artikel am aufbau der seite; trifft er einen nicht, markierst du die zeile und übernimmst sie. einrichtung machen wir mit dir.">
+        <div class="shopmock" aria-label="Schematische Darstellung: Online-Shop mit Knopf + Angebot">
+          <div class="sm-bar"><i></i><i></i><i></i><span>shop.grosshaendler.at</span></div>
+          <div class="sm-row"><b>Pressfitting Bogen 90° 22 mm</b><small>Art.-Nr. 4711 · Stk</small><span class="sm-btn">+ Angebot</span></div>
+          <div class="sm-row"><b>Kupferrohr 22 × 1 mm</b><small>Art.-Nr. 0815 · m</small><span class="sm-btn">+ Angebot</span></div>
+          <div class="sm-row"><b>Kugelhahn 3/4" IG</b><small>Art.-Nr. 1234 · Stk</small><span class="sm-btn">+ Angebot</span></div>
+          <div class="sm-row"><b>Entlüfter 1/2"</b><small>Art.-Nr. 5678 · Stk</small><span class="sm-btn">+ Angebot</span></div>
+          <div class="sm-korb">Korb <span class="sm-n"></span> → An die App senden</div>
+          <div class="sm-cap">Schematische Darstellung · Beispielartikel</div>
+        </div>
+        <div class="fn-t"><div class="bdgs"><span class="bdg b-net">Braucht Internet</span></div><h3>Shop-Knopf für Chrome</h3><p class="pitch">Artikel direkt aus dem Online-Shop deines Großhändlers ins Angebot – mit einem Klick.</p><ul><li>Erweiterung für Chrome am PC: hängt im Online-Shop zu jedem Artikel einen Knopf „+ Angebot“</li><li>Name, Artikelnummer, Einheit und Einkaufspreis landen im Korb und gehen mit einem Klick ins Angebot („Aus dem Shop“)</li><li>Lieferscheine aus den Vorgängen im Shop holen – die App zeigt nur, was noch nicht eingebucht ist</li><li>Bestelltabellen mit Sollmengen und Preisen als Materialkisten ins Lager übernehmen</li><li>Kein fremder Server dazwischen: übergeben wird direkt an deine App</li><li>Erkennt Artikel am Aufbau der Seite; trifft er einen nicht, markierst du die Zeile und übernimmst sie. Einrichtung machen wir mit dir.</li></ul></div>
       </article>
       </div>
     </div>
