@@ -120,6 +120,9 @@ footer a{color:#c7d1e6}
 .sm-cap{margin:8px 8px 0;color:#6b7689;font-size:10px;text-align:center}
 @media (prefers-reduced-motion:reduce){.sm-btn,.sm-n::before{animation:none}}
 .ablauf{padding:40px 0 30px}
+.ablauf-film{max-width:980px;margin:0 auto 12px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 110px rgba(0,0,0,.6),0 0 100px rgba(255,150,50,.12);background:#0b1530}
+.ablauf-film video{display:block;width:100%;aspect-ratio:1280/800;background:#f3f5f8}
+.film-cap{max-width:980px;margin:0 auto 34px;color:var(--muted);font-size:14px;text-align:center}
 .steps8{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .steps8 li{counter-increment:s;position:relative;padding:22px 20px 20px;border-radius:22px;background:linear-gradient(160deg,rgba(28,36,62,.75),rgba(12,16,30,.92));border:1px solid var(--line);display:grid;gap:8px;align-content:start}
 .steps8 li::before{content:counter(s,decimal-leading-zero);font:700 34px/1 var(--head);color:var(--gold);text-shadow:0 0 24px rgba(255,180,60,.4)}
@@ -152,12 +155,14 @@ footer a{color:#c7d1e6}
       <h1>Alle <em>38</em> Funktionen.</h1>
       <div class="rule"></div>
       <p class="lead">Jede Funktion der Installateur-Zentrale kurz erklärt – mit einer echten Bildschirmaufnahme aus der App. Tippe auf einen Bereich oder such einfach nach dem, was du brauchst.</p>
-      <p class="hinweis">Aufnahmen aus dem Vorführmodus mit erfundenen Demodaten. Die App ist in der Testphase; Funktionsumfang bis zum Marktstart vorbehalten. „Offline“ heißt: geht auch ohne Netz und gleicht später ab. KI-Funktionen brauchen Internet, und ihre Vorschläge prüfst du selbst.</p>
+            <p class="hinweis">Aufnahmen aus dem Vorführmodus mit erfundenen Demodaten. Die App ist in der Testphase; Funktionsumfang bis zum Marktstart vorbehalten. „Offline“ heißt: geht auch ohne Netz und gleicht später ab. KI-Funktionen brauchen Internet, und ihre Vorschläge prüfst du selbst.</p>
     </div>
   </section>
   <section class="ablauf" id="angebot-ablauf">
     <div class="wrap">
       <div class="kat-h"><div class="eyebrow">Schritt für Schritt</div><h2>So entsteht ein Angebot.</h2><p>Vom ersten Satz bis zur Rechnung – so läuft es in der Installateur-Zentrale.</p></div>
+      <div class="ablauf-film"><video controls muted playsinline preload="none" poster="assets/funktionen/angebot-ablauf.jpg" data-src="assets/funktionen/angebot-ablauf.mp4" aria-label="Bildschirmaufnahme: Angebot einsprechen, Preis anpassen, mit KI sortieren (Beispiel mit Demodaten)"></video></div>
+      <p class="film-cap">Zusammenschnitt, 43 Sekunden: einsprechen → Positionen aus der Preisliste → oben den Preis anpassen → mit KI sortieren. Beispiel mit Demodaten, echten Artikelnamen, erfundenen Preisen und vorbereiteter KI-Antwort. Markennamen gehören ihren Herstellern; keine Verbindung zu ihnen.</p>
       <ol class="steps8">
         <li><b>Starten</b><span>„Neues Angebot“, eine Vorlage (z. B. Badsanierung komplett) oder „Angebot diktieren“. Nummer, Gültigkeit, Texte und Preisgrundlage sind schon vorbelegt.</span></li>
         <li><b>Kunde antippen</b><span>Aus der Kartei: Name, Anschrift und Telefon kommen mit. Steht beim Kunden Reverse Charge, stellt die App das gleich mit um.</span></li>
@@ -397,7 +402,7 @@ footer a{color:#c7d1e6}
   <div class="wrap cta-end">
     <h2>Willst du's live sehen?</h2>
     <p class="lead" style="margin:0 auto 26px">In der Vorführung zeigen wir dir die Funktionen an deinen eigenen Abläufen.</p>
-    <a class="btn btn-gold" href="index.html#pilot">Pilotplatz anfragen →</a>
+    <div class="cta-row" style="justify-content:center"><a class="btn btn-gold" href="index.html#pilot">Pilotplatz anfragen →</a></div>
   </div>
 </main>
 <footer>

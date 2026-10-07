@@ -311,6 +311,35 @@ footer a{color:#c7d1e6}
 /* ---------- Band als Film */
 .band video{position:absolute;inset:-10% 0;width:100%;height:120%;object-fit:cover}
 
+
+/* ---------- Verkauf: Mikrotext, Rechner, Maßfunktionen, Handy-Leiste */
+.micro{margin-top:14px;color:var(--muted);font-size:14px}
+.micro b{color:#dfe6f5;font-weight:600}
+.roi .box{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;border-radius:30px;padding:clamp(26px,4vw,50px);background:linear-gradient(150deg,rgba(28,36,62,.85),rgba(10,14,28,.95));border:1px solid var(--line)}
+.roi label{display:grid;gap:10px;margin-bottom:26px;font-weight:600;color:#dfe6f5}
+.roi .val{font:500 22px var(--mono);color:var(--gold)}
+.roi input[type=range]{width:100%;accent-color:#f2a91c;height:28px}
+.roi .out{border-radius:22px;padding:28px;background:rgba(5,7,15,.55);border:1px solid rgba(255,201,97,.35);text-align:center}
+.roi .big{font:700 clamp(54px,7vw,84px)/1 var(--head);color:#fff;text-shadow:0 0 40px rgba(255,180,60,.35)}
+.roi .big small{font:600 18px var(--body);color:var(--muted);margin-left:6px}
+.roi .sub{margin-top:14px;color:#c7d1e6}
+.roi .sub b{color:var(--gold)}
+.roi .note{margin-top:16px}
+@media (max-width:900px){.roi .box{grid-template-columns:1fr;gap:26px}}
+.mass{margin-top:20px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;border-radius:26px;padding:30px 32px;background:linear-gradient(135deg,rgba(142,20,38,.28),rgba(11,77,162,.22));border:1px solid rgba(255,201,97,.45)}
+.mass h3{font-size:34px;margin:8px 0 10px}
+.mass ul{list-style:none;display:grid;gap:8px;color:#dfe6f5}
+.mass li{padding-left:22px;position:relative}
+.mass li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;transform:rotate(45deg);background:var(--gold)}
+.mass .preis{text-align:center}
+.mass .preis b{display:block;font:700 40px/1 var(--head);color:#fff}
+.mass .preis span{display:block;margin:8px 0 18px;color:var(--muted);font-size:14px}
+@media (max-width:900px){.mass{grid-template-columns:1fr}}
+.handyleiste{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(5,7,15,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s}
+.handyleiste.zeigen{transform:none}
+.handyleiste .btn{flex:1;justify-content:center;padding:14px 10px;font-size:15px}
+@media (max-width:760px){.handyleiste{display:flex}footer{padding-bottom:110px}}
+
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
@@ -356,8 +385,10 @@ footer a{color:#c7d1e6}
       <p class="lead ld" style="animation-delay:.45s">Die Betriebs-App für Heizung, Sanitär und Klima. Angebot einsprechen, Lieferschein fotografieren, Kunde unterschreibt am Handy – und abends ist der Schreibtisch leer.</p>
       <div class="cta-row ld" style="animation-delay:.6s">
         <a class="btn btn-gold" href="#pilot">Pilotplatz anfragen →</a>
+        <a class="btn btn-ghost" href="https://danninger-demo.netlify.app/" target="_blank" rel="noopener" data-demo>App testen (Demo) ↗</a>
         <a class="btn btn-ghost" href="#film">▶ Video ansehen (26 s)</a>
       </div>
+      <p class="micro ld" style="animation-delay:.7s"><b>Unverbindlich</b> · persönliche Vorführung · ein Installateur, kein Callcenter</p>
       <div class="trust ld" style="animation-delay:.75s"><span>Handy, Tablet und PC</span><span>Viele Funktionen auch offline</span><span>Für Betriebe ab 1 Person</span></div>
       <p class="film-note">Die App ist in der Testphase. Funktionsumfang bis zum Marktstart vorbehalten – in der Vorführung zeigen wir dir, was heute schon läuft.</p>
     </div>
@@ -567,6 +598,27 @@ footer a{color:#c7d1e6}
   </div>
 </section>
 
+<!-- ================= RECHNER ================= -->
+<section class="sec roi" id="rechner" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="box reveal">
+      <div>
+        <div class="eyebrow">Rechne selbst</div>
+        <h2>Was kostet dich die Büroarbeit?</h2>
+        <div class="rule"></div>
+        <label for="roiStd">Stunden Büro pro Woche (Angebote, Lieferscheine, Rechnungen, Suchen) <span class="val" id="roiStdV">6 h</span><input type="range" id="roiStd" min="1" max="20" step="1" value="6"></label>
+        <label for="roiSatz">Dein Stundensatz <span class="val" id="roiSatzV">65 €</span><input type="range" id="roiSatz" min="40" max="120" step="5" value="65"></label>
+      </div>
+      <div class="out">
+        <div class="eyebrow" style="color:var(--muted)">Deine Büro-Zeit ist im Monat wert</div>
+        <div class="big" id="roiWert">1.690 €<small>/ Monat</small></div>
+        <p class="sub">Das Paket <b>Team</b> kostet geplant 149 € netto im Monat (dazu einmalig Einrichtung, 12 Monate Mindestlaufzeit). Es rechnet sich, wenn es dir rund <b id="roiBreak">2,3 Stunden</b> im Monat abnimmt.</p>
+        <p class="note">Rechenbeispiel mit deinen Eingaben – keine Zusage, wie viel Zeit du tatsächlich sparst. Netto, ohne Einrichtung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PREISE ================= -->
 <section class="sec" id="preise">
   <div class="glow-navy"></div>
@@ -587,6 +639,18 @@ footer a{color:#c7d1e6}
       <div class="extra reveal"><b>Einrichtung vor Ort (einmalig)</b><span>1.290 € <small style="font:500 14px var(--body);color:var(--muted)">+ Fahrtkosten</small></span></div>
       <div class="extra reveal"><b>Rundum-Paket (Betreuung)</b><span>+49 €<small style="font:500 14px var(--body);color:var(--muted)"> / Monat</small></span></div>
     </div>
+    <div class="mass reveal">
+      <div>
+        <div class="eyebrow">Eigene Funktionen nach Maß</div>
+        <h3>Dir fehlt etwas? Wir prüfen es und bauen es dazu.</h3>
+        <ul>
+          <li>Eigene Vorlagen, Protokolle, Checklisten oder Auswertungen für deinen Betrieb</li>
+          <li>Anbindung an Programme, die du schon nutzt – nach Prüfung, ob es technisch geht</li>
+          <li>Du bekommst vorab ein Angebot mit Fixpreis und entscheidest dann</li>
+        </ul>
+      </div>
+      <div class="preis"><b>Fixpreis je nach Aufwand</b><span>Angebot vorab, ohne Verpflichtung</span><a class="btn btn-gold" href="#pilot" data-wunsch="1">Wunsch-Funktion anfragen →</a></div>
+    </div>
     <p class="note" style="font-size:16px;color:#c7d1e6">Alle Preise netto. 12 Monate Mindestlaufzeit, danach monatlich kündbar. Fahrtkosten nennen wir dir vorab im Angebot. Geplante Preise zum Marktstart, Stand Oktober 2026. Angebot ausschließlich für Unternehmer (Gewerbebetriebe).</p>
   </div>
 </section>
@@ -600,6 +664,8 @@ footer a{color:#c7d1e6}
         <h2>Sei einer der ersten.</h2>
         <div class="rule"></div>
         <p class="lead">Wir starten mit wenigen Pilotbetrieben aus Heizung, Sanitär und Klima. Du bekommst eine persönliche Vorführung, wir richten die App mit dir ein – und deine Rückmeldung fließt direkt in die nächste Version.</p>
+        <p style="margin-top:22px" data-demo><a class="btn btn-ghost" href="https://danninger-demo.netlify.app/" target="_blank" rel="noopener">Vorher selbst ausprobieren: Demo öffnen ↗</a></p>
+        <p class="form-hint" style="margin-top:8px" data-demo>Die Demo zeigt erfundene Beispieldaten. Was du eingibst, bleibt in deinem Browser.</p>
         <ul class="pains" style="margin-top:26px">
           <li><span class="x" style="background:rgba(255,201,97,.15);border-color:rgba(255,201,97,.6);color:var(--gold)">✓</span><span>Vorführung mit deinen eigenen Abläufen</span></li>
           <li><span class="x" style="background:rgba(255,201,97,.15);border-color:rgba(255,201,97,.6);color:var(--gold)">✓</span><span>Persönlicher Ansprechpartner – ein Installateur, kein Callcenter</span></li>
@@ -629,6 +695,7 @@ footer a{color:#c7d1e6}
       <details><summary>Was ist, wenn im Keller kein Netz ist?</summary><p>Erfassen, Material buchen und Unterschriften gehen auch ohne Netz. Sobald wieder Empfang ist, gleicht die App alles ab. Funktionen mit KI und das Senden von PDFs brauchen eine Internetverbindung.</p></details>
       <details><summary>Kann ich meine eigenen Preise und Großhändler-Kataloge verwenden?</summary><p>Ja. Du liest die Datanorm-Dateien deines Großhändlers ein, hinterlegst Rabattgruppen und eigene Vorlagen – Angebote rechnen mit deinen Preisen.</p></details>
       <details><summary>Macht die KI meine Angebote allein?</summary><p>Nein. Die KI macht einen Vorschlag aus dem, was du einsprichst oder fotografierst. Du schaust drüber, änderst, was nicht passt, und schickst erst dann. KI-Antworten können Fehler enthalten.</p></details>
+      <details><summary>Kann ich eigene Funktionen dazukaufen?</summary><p>Ja. Wenn dir für deinen Betrieb etwas fehlt – eine Vorlage, ein Protokoll, eine Auswertung oder eine Anbindung und es technisch machbar ist, bauen wir es dazu. Du bekommst vorab ein Angebot mit Fixpreis und entscheidest dann.</p></details>
       <details><summary>Wie lange bin ich gebunden?</summary><p>12 Monate Mindestlaufzeit, danach monatlich kündbar. Für Pilotbetriebe gelten eigene Konditionen.</p></details>
       <details><summary>Ab wann kann ich starten?</summary><p>Wir starten gerade mit wenigen Pilotbetrieben. Schick uns eine Anfrage – wir melden uns persönlich und sagen dir ehrlich, wann ein Platz frei ist.</p></details>
     </div>
@@ -636,6 +703,7 @@ footer a{color:#c7d1e6}
 </section>
 </main>
 
+<div class="handyleiste" id="handyleiste" aria-label="Schnellzugriff"><a class="btn btn-ghost" href="https://danninger-demo.netlify.app/" target="_blank" rel="noopener" data-demo>Demo testen ↗</a><a class="btn btn-gold" href="#pilot">Anfragen</a></div>
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/img/icon-clear.png" alt=""><span>INSTALLATEUR-ZENTRALE</span></a>
@@ -647,6 +715,9 @@ footer a{color:#c7d1e6}
 <script>
 /* ===== Einstellungen – hier echte Kontaktadresse eintragen ===== */
 var KONTAKT_MAIL = ""; // z. B. "office@deine-domain.at"
+/* Demo-Knöpfe erst einschalten, wenn die Demo neutral ist (ohne Danninger-Logo/-Namen) oder Danninger schriftlich zugestimmt hat */
+var DEMO_FREI = false;
+if (!DEMO_FREI) document.querySelectorAll("[data-demo]").forEach(function(e){ e.remove(); });
 
 (function(){
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -737,6 +808,28 @@ var KONTAKT_MAIL = ""; // z. B. "office@deine-domain.at"
   var played = false;
   new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting && !played) { played = true; runDemo(); } }); }, {threshold:.45}).observe(demo);
   document.getElementById("replay").addEventListener("click", runDemo);
+
+  // Rechner "Was kostet dich die Büroarbeit?"
+  var rS = document.getElementById("roiStd"), rP = document.getElementById("roiSatz");
+  function eur(n){ return Math.round(n).toLocaleString("de-AT") + " €"; }
+  function roi(){
+    var h = +rS.value, satz = +rP.value;
+    document.getElementById("roiStdV").textContent = h + " h";
+    document.getElementById("roiSatzV").textContent = satz + " €";
+    document.getElementById("roiWert").innerHTML = eur(h * satz * 52 / 12) + "<small>/ Monat</small>";
+    document.getElementById("roiBreak").textContent = (149 / satz).toLocaleString("de-AT", {maximumFractionDigits: 1}) + " Stunden";
+  }
+  rS.addEventListener("input", roi); rP.addEventListener("input", roi); roi();
+
+  // "Wunsch-Funktion anfragen" belegt das Nachrichtenfeld vor
+  document.querySelectorAll("[data-wunsch]").forEach(function(a){ a.addEventListener("click", function(){
+    var t = document.querySelector("#pilotForm textarea"); if (t && !t.value) t.value = "Ich hätte gern diese Funktion dazu: ";
+  }); });
+
+  // Handy: Knopfleiste unten, sobald der Startbereich vorbei ist
+  var leiste = document.getElementById("handyleiste"), heroEl = document.querySelector(".hero");
+  function leisteZeigen(){ var unten = heroEl.getBoundingClientRect().bottom < 0; var pilot = document.getElementById("pilot").getBoundingClientRect(); var imPilot = pilot.top < window.innerHeight && pilot.bottom > 0; leiste.classList.toggle("zeigen", unten && !imPilot); }
+  window.addEventListener("scroll", leisteZeigen, {passive:true}); leisteZeigen();
 
   // Glutfunken im Hero
   var cv = document.getElementById("embers"), cx = cv.getContext("2d"), P = [], W, H, dpr = Math.min(window.devicePixelRatio||1, 2);
