@@ -1,0 +1,3 @@
+# Demo-Entwurf – nicht indexieren
+User-agent: *
+Disallow: /

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="googlebot" content="noindex,nofollow" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preload" href="schrift/Figtree-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="schrift/OpenSans-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="style.css" />
+
+<title>Norbert Loindl Installationen – Haustechnik in Köstendorf (Entwurf)</title>
+<meta name="description" content="Entwurf einer neuen Webseite für Norbert Loindl Installationen GmbH, Köstendorf: Heizung, Sonnenenergie, Bad &amp; Sanitär." />
+</head>
+<body class="seite-start">
+<div class="demo-band" role="note">
+  <span class="demo-band__punkt" aria-hidden="true"></span>
+  <span><strong>Entwurf</strong> – Demo für Loindl Installationen, nicht offiziell</span>
+</div>
+<header class="kopf" data-kopf>
+  <div class="kopf__innen">
+    <a class="marke" href="index.html" aria-label="Norbert Loindl Installationen – Startseite">
+      <svg class="marke__bild" viewBox="0 0 200 64" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="schwung" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1B3A8C" />
+            <stop offset=".55" stop-color="#1D5FB8" />
+            <stop offset="1" stop-color="#16A0E3" />
+          </linearGradient>
+        </defs>
+        <!-- Schwung-L in der Anmutung des bestehenden Logos (Nachbau, kein Original) -->
+        <path fill="url(#schwung)" d="M128 3c-19-1-27 9-31 22-3 11-7 21-27 27 34 8 82 6 120-9-28 7-62 9-76 7 9-5 12-14 15-25 3-11 7-18 15-21z" />
+        <text x="2" y="38" class="marke__wort" paint-order="stroke">Norbert Loindl</text>
+        <text x="104" y="52" class="marke__zusatz">Installationen GmbH</text>
+      </svg>
+    </a>
+    <nav class="haupt" aria-label="Hauptmenü">
+      <a href="index.html#heizung">Heizung</a>
+      <a href="index.html#sonnenenergie">Sonnenenergie</a>
+      <a href="index.html#bad">Bad &amp; Sanitär</a>
+      <a href="index.html#leistungen">Weitere Leistungen</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="knopf knopf--rot kopf__ruf" href="tel:+43621620518">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span>06216 20518</span>
+    </a>
+    <button class="kopf__menue" type="button" aria-expanded="false" aria-controls="handymenue" data-menue>
+      <span></span><span></span><span class="sr">Menü</span>
+    </button>
+  </div>
+  <nav class="handymenue" id="handymenue" aria-label="Menü" hidden>
+    <a href="index.html#heizung">Heizung</a>
+    <a href="index.html#sonnenenergie">Sonnenenergie</a>
+    <a href="index.html#bad">Bad &amp; Sanitär</a>
+    <a href="index.html#leistungen">Weitere Leistungen</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a class="knopf knopf--rot" href="tel:+43621620518">06216 20518 anrufen</a>
+  </nav>
+</header>
+
+
+<main id="inhalt">
+  <!-- Scroll-Film: fünf Stationen, vier Kamerafahrten -->
+  <section class="film" id="film" aria-label="Rundgang durch unsere Leistungen" data-film>
+    <div class="film__buehne">
+      <canvas class="film__leinwand" data-leinwand aria-hidden="true"></canvas>
+      <div class="film__schleier" aria-hidden="true"></div>
+      <div class="film__fortschritt" aria-hidden="true"><span data-fortschritt></span></div>
+
+      <div class="kapitel kapitel--start ist-aktiv" data-kapitel="0">
+        <p class="kapitel__ober">Haustechnik nach Maß · Köstendorf · seit 2001</p>
+        <h1 class="kapitel__titel">Willkommen bei<br /><span>Norbert Loindl</span> Installationen</h1>
+        <p class="kapitel__unter">Ihr regionaler Ansprechpartner für Wärme, Sonnenenergie und Bad – vom Neubau bis zur Sanierung.</p>
+        <div class="kapitel__knoepfe">
+          <a class="knopf knopf--rot" href="#heizung">Heizung</a>
+          <a class="knopf knopf--rot" href="#sonnenenergie">Sonnenenergie</a>
+          <a class="knopf knopf--rot" href="#bad">Bad &amp; Sanitär</a>
+        </div>
+        <p class="kapitel__hinweis" aria-hidden="true"><span></span>Scrollen Sie durchs Haus</p>
+      </div>
+
+      <article class="kapitel kapitel--karte" data-kapitel="1" id="heizung">
+        <p class="kapitel__nr"><b>01</b> Heizung</p>
+        <h2>Wohlige Wärme aus Holz und Umwelt.</h2>
+        <p>Die Wahl der Heizung beeinflusst Ihre Kosten für die nächsten 15 bis 20 Jahre. Ob Pellets, Hackgut, Stückholz oder Wärmepumpe – wir finden das System, das zu Ihrem Haus passt.</p>
+        <ul class="schilder"><li>Holzheizungen</li><li>Wärmepumpen</li><li>Förderungen</li></ul>
+      </article>
+
+      <article class="kapitel kapitel--karte kapitel--rechts" data-kapitel="2" id="sonnenenergie">
+        <p class="kapitel__nr"><b>02</b> Sonnenenergie</p>
+        <h2>Strom und Wärme direkt vom eigenen Dach.</h2>
+        <p>Von der Förderberatung über die Planung bis zur fertigen Anlage: Photovoltaik für Ihren eigenen Ökostrom, Solarthermie für Warmwasser und Heizung.</p>
+        <ul class="schilder"><li>Photovoltaik</li><li>Solarthermie</li><li>Förderungen</li></ul>
+      </article>
+
+      <article class="kapitel kapitel--karte" data-kapitel="3" id="bad">
+        <p class="kapitel__nr"><b>03</b> Bad &amp; Sanitär</p>
+        <h2>Ihr neues Bad – alles aus einer Hand.</h2>
+        <p>Sanieren, auffrischen oder neu bauen: von der Mauer bis zum Handtuchhaken, mit 3D-Planung vorab und einem Ansprechpartner für alles.</p>
+        <ul class="schilder"><li>Beratung &amp; Planung</li><li>3D-Badplanung</li><li>Badbudgetplaner</li></ul>
+      </article>
+
+      <article class="kapitel kapitel--karte kapitel--rechts" data-kapitel="4">
+        <p class="kapitel__nr"><b>04</b> Rundum wohlfühlen</p>
+        <h2>Ein Zuhause, das einfach funktioniert.</h2>
+        <p>Angenehme Raumtemperaturen, gesunde Luft und sauberes Wasser – mit Komfortlüftung, Fußboden- und Wandheizung und regelmäßiger Wartung.</p>
+        <a class="knopf knopf--rot" href="kontakt.html">Beratung anfragen</a>
+      </article>
+
+      <ol class="film__stationen" aria-hidden="true">
+        <li data-station="0">Start</li>
+        <li data-station="1">Heizung</li>
+        <li data-station="2">Sonnenenergie</li>
+        <li data-station="3">Bad</li>
+        <li data-station="4">Zuhause</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Leitbetrieb -->
+  <section class="block leitbetrieb">
+    <div class="rahmen leitbetrieb__raster">
+      <div>
+        <p class="etikett">Seit 2001 in Köstendorf</p>
+        <h2 class="gross" data-heben>Leitbetrieb für eine ganze Region.</h2>
+      </div>
+      <div class="leitbetrieb__text">
+        <p class="einstieg">Seit 2001 sind wir Ihr starker Partner für Erneuerbare Energie, effiziente Heizsysteme und moderne Bäder.</p>
+        <p>Mit Leidenschaft für innovative Haustechnik entwickeln wir individuelle Lösungen für Wärme, Wasser und Luft – nachhaltig, regional und zukunftsorientiert. Ob Neubau oder Sanierung, ob Heizung, Eigenstrom oder Bad: beste Haustechnik aus Meisterhand.</p>
+        <dl class="fakten">
+          <div><dt>2001</dt><dd>gegründet in Köstendorf</dd></div>
+          <div><dt>3</dt><dd>Leistungsbereiche aus einer Hand</dd></div>
+          <div><dt>1</dt><dd>Ansprechpartner von der Beratung bis zur Übergabe</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="laufband" aria-hidden="true">
+    <div class="laufband__zeile" data-lauf>Wir installieren Wohnträume&nbsp;—&nbsp;Wir installieren Wohnträume&nbsp;—&nbsp;Wir installieren Wohnträume&nbsp;—&nbsp;</div>
+    <div class="laufband__zeile laufband__zeile--blau" data-lauf>Heizung · Sonnenenergie · Bad &amp; Sanitär · Lüftung · Wartung · Heizung · Sonnenenergie · Bad &amp; Sanitär ·&nbsp;</div>
+  </div>
+
+  <!-- Leistungen -->
+  <section class="block leistungen" id="leistungen">
+    <div class="rahmen">
+      <p class="etikett">Unsere Leistungen</p>
+      <h2 class="gross" data-heben>Haustechnik, die Jahrzehnte hält.</h2>
+      <div class="leistungen__raster">
+        <a class="leistung" href="kontakt.html?thema=Heizung">
+          <figure><img src="bilder/k1-s.webp" alt="Heller Heizraum mit Pelletskessel, Pufferspeicher und Kupferleitungen" loading="lazy" width="720" height="403" data-parallax /></figure>
+          <div class="leistung__text">
+            <h3>Heizung</h3>
+            <p>Pellets-, Hackgut- und Stückholzheizungen, Kombikessel, Wärmepumpen – inklusive Förderabwicklung.</p>
+            <span class="pfeil">Mehr zur Heizung</span>
+          </div>
+        </a>
+        <a class="leistung" href="kontakt.html?thema=Sonnenenergie">
+          <figure><img src="bilder/k2-s.webp" alt="Bauernhaus mit Photovoltaik und Solarkollektoren am Dach" loading="lazy" width="720" height="403" data-parallax /></figure>
+          <div class="leistung__text">
+            <h3>Sonnenenergie</h3>
+            <p>Photovoltaik und Solarthermie – von der Förderberatung über die Planung bis zur Umsetzung.</p>
+            <span class="pfeil">Mehr zur Sonnenenergie</span>
+          </div>
+        </a>
+        <a class="leistung" href="kontakt.html?thema=Bad">
+          <figure><img src="bilder/k3-s.webp" alt="Modernes Bad mit Holz, Naturstein und freistehender Wanne" loading="lazy" width="720" height="403" data-parallax /></figure>
+          <div class="leistung__text">
+            <h3>Bad &amp; Sanitär</h3>
+            <p>Beratung, 3D-Badplanung und Umsetzung mit einem Ansprechpartner und möglichst kurzer Bauzeit.</p>
+            <span class="pfeil">Mehr zum Bad</span>
+          </div>
+        </a>
+        <a class="leistung" href="kontakt.html?thema=Lueftung">
+          <figure><img src="bilder/k4-s.webp" alt="Bauernhaus am Abend mit beleuchteten Fenstern und Wärmepumpe" loading="lazy" width="720" height="403" data-parallax /></figure>
+          <div class="leistung__text">
+            <h3>Weitere Leistungen</h3>
+            <p>Komfortlüftungen, Fußboden- und Wandheizungen, Service und Wartung für Ihr Heizsystem.</p>
+            <span class="pfeil">Mehr erfahren</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ablauf Bad -->
+  <section class="block ablauf">
+    <div class="rahmen ablauf__raster">
+      <div class="ablauf__kopf">
+        <p class="etikett">So entsteht Ihr neues Bad</p>
+        <h2 class="gross" data-heben>Neun Schritte. Ein Ansprechpartner.</h2>
+        <p>Von der ersten Idee bis zur Übergabe – sauber, termingerecht und auf Wunsch blitzeblank.</p>
+        <a class="knopf knopf--rand" href="kontakt.html?thema=Bad">Erstberatung vereinbaren</a>
+      </div>
+      <div class="schritte">
+        <span class="schritte__leitung" aria-hidden="true"><span data-leitung></span></span>
+        <ol>
+        <li><b>Erstberatung + Idee</b><span>Kompetent und mit offenem Ohr für Ihre Wünsche.</span></li>
+        <li><b>Vermessung + Besprechung</b><span>Besichtigen, vermessen, besprechen – bei Ihnen vor Ort.</span></li>
+        <li><b>Produkte + Budget</b><span>Auswahl ganz nach Budget – Qualität ist Ehrensache.</span></li>
+        <li><b>Planung + Visualisierung</b><span>Ihr Bad in 3D, bevor der erste Stein bewegt wird.</span></li>
+        <li><b>Details + Angebot</b><span>Alles ausgesucht? Zeit für Ihr verbindliches Angebot.</span></li>
+        <li><b>Koordination + Abwicklung</b><span>Ein Ansprechpartner, möglichst kurze Bauzeit.</span></li>
+        <li><b>Demontage + Sanierung</b><span>Reibungslos, sauber und termingerecht.</span></li>
+        <li><b>Endreinigung + Übergabe</b><span>Persönliche Endabnahme.</span></li>
+        <li><b>Service + Garantie</b><span>Pflegetipps und Garantie für Ihr Traumbad.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Förderungen -->
+  <section class="foerderung">
+    <div class="rahmen foerderung__raster">
+      <div>
+        <p class="etikett etikett--hell">Förderungen</p>
+        <h2 class="gross" data-heben>Wir führen Sie gut durch die Förderlandschaft.</h2>
+      </div>
+      <div>
+        <p>Ob Altbau-Sanierung, Neubau oder Heizungstausch: Wir beraten Sie zu den passenden Förderungen und unterstützen Sie bei der Abwicklung Ihrer Anträge – für Heizung, Solar und Bad.</p>
+        <p class="foerderung__tipp"><b>Tipp</b> Das Land Salzburg fördert den altengerechten Badumbau. <em>Aktuelle Fördersätze vor Veröffentlichung prüfen.</em></p>
+        <a class="knopf knopf--weiss" href="kontakt.html?thema=Foerderung">Förderberatung anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projekte -->
+  <section class="projekte" aria-label="Aus der Praxis">
+    <div class="projekte__pin">
+      <div class="rahmen projekte__kopf">
+        <p class="etikett">Aus der Praxis</p>
+        <h2 class="gross" data-heben>Projekte aus der Region.</h2>
+      </div>
+      <div class="projekte__spur" data-spur>
+        <article class="projekt projekt--sonne"><p class="projekt__art">Solarstrom</p><h3>Feuerwehr setzt auf Sonnenstrom</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+        <article class="projekt projekt--holz"><p class="projekt__art">Kombi Stückholz/Pellets</p><h3>„A guate Arbeit“</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+        <article class="projekt projekt--holz"><p class="projekt__art">Hackgut + Solar</p><h3>Betrieb mit Handschlagqualität</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+        <article class="projekt projekt--wp"><p class="projekt__art">Wärmepumpe + Solar</p><h3>Haus und Pool wohlig warm</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+        <article class="projekt projekt--wp"><p class="projekt__art">Wärmepumpe + Solar</p><h3>Ciao Gas – Hallo Wärmepumpe</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+        <article class="projekt projekt--bad"><p class="projekt__art">Bad Neubau</p><h3>Wohlfühlzone Badezimmer</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+        <article class="projekt projekt--sonne"><p class="projekt__art">Solarstrom</p><h3>Sonnenstrom für Landwirtschaft</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+        <article class="projekt projekt--holz"><p class="projekt__art">Pellets + Solar</p><h3>Raus aus Öl – super Förderungen</h3><p class="projekt__foto">Projektfoto folgt</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jobs + Kontakt -->
+  <section class="block schluss">
+    <div class="rahmen schluss__raster">
+      <div class="karte karte--jobs">
+        <p class="etikett">Jobs</p>
+        <h2>Komm in unser Team.</h2>
+        <p>Ein abwechslungsreicher, krisensicherer Job in einer Branche mit Zukunft – in einem stabilen, familiären Betrieb. Auch als Lehrling.</p>
+        <a class="knopf knopf--rand" href="ueber-uns.html#jobs">Mehr dazu</a>
+      </div>
+      <div class="karte karte--kontakt">
+        <p class="etikett etikett--hell">Kontakt</p>
+        <h2>Reden wir über Ihr Zuhause.</h2>
+        <p>Rufen Sie uns an oder schreiben Sie uns – wir melden uns persönlich.</p>
+        <div class="karte__knoepfe">
+          <a class="knopf knopf--weiss" href="tel:+43621620518">06216 20518</a>
+          <a class="knopf knopf--rand-hell" href="kontakt.html">Zum Formular</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="fuss">
+  <div class="fuss__wort" aria-hidden="true"><span data-fuss-wort>Wir installieren Wohnträume.</span></div>
+  <div class="fuss__raster">
+    <div>
+      <p class="etikett">Adresse</p>
+      <p>Norbert Loindl Installationen GmbH<br />Landesstraße 27<br />5203 Köstendorf</p>
+    </div>
+    <div>
+      <p class="etikett">Kontakt</p>
+      <p><a href="tel:+43621620518">06216 20518</a><br /><a href="mailto:office@loindl.com">office@loindl.com</a></p>
+    </div>
+    <div>
+      <p class="etikett">Büro</p>
+      <p>Montag bis Freitag<br />08:00 bis 12:00 Uhr<br />Nachmittags nach Vereinbarung</p>
+    </div>
+    <div>
+      <p class="etikett">Mehr</p>
+      <p><a href="ueber-uns.html">Über uns &amp; Jobs</a><br /><a href="impressum.html">Impressum</a><br /><a href="datenschutz.html">Datenschutz</a></p>
+    </div>
+  </div>
+  <div class="fuss__unten">
+    <span>© Norbert Loindl Installationen GmbH</span>
+    <span class="fuss__demo">Entwurf zur Ansicht – keine offizielle Seite. Gestaltung: Sichtbarkeits-Paket (Muster).</span>
+  </div>
+</footer>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="main.js" defer></script>
+
+</body>
+</html>
