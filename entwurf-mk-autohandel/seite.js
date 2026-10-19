@@ -282,7 +282,7 @@
     const skript = (src) => new Promise((ok, fehl) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = fehl; document.head.appendChild(s); });
     const start = () => {
       if (ruhig.matches) return;
-      skript('C:/Program Files/Git/entwurf-mk-autohandel/vendor/gsap.min.js').then(() => skript('C:/Program Files/Git/entwurf-mk-autohandel/vendor/ScrollTrigger.min.js')).then(() => skript('C:/Program Files/Git/entwurf-mk-autohandel/vendor/lenis.min.js')).then(() => skript('C:/Program Files/Git/entwurf-mk-autohandel/motion.js?v=3')).catch(() => {});
+      skript('/entwurf-mk-autohandel/vendor/gsap.min.js').then(() => skript('/entwurf-mk-autohandel/vendor/ScrollTrigger.min.js')).then(() => skript('/entwurf-mk-autohandel/vendor/lenis.min.js')).then(() => skript('/entwurf-mk-autohandel/motion.js?v=3')).catch(() => {});
     };
     const los = () => ('requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 1200 }) : setTimeout(start, 200));
     if (document.readyState === 'complete') los(); else addEventListener('load', los, { once: true });
