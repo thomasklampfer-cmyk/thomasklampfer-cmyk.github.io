@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vergleich vorher / nachher | MKA Entwurf</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Interner Vergleich: alte Seite mk-autohandel.at und neuer Entwurf.">
+<link rel="stylesheet" href="/entwurf-mk-autohandel/stil.css">
+<style>
+  body { padding-top: var(--entwurf-h); }
+  .vg { display: grid; gap: 16px; padding: 16px; }
+  .vg h1 { font: 600 clamp(1.8rem, 4vw, 3rem)/1 var(--f-titel); text-transform: uppercase; margin: 1rem 0 .25rem; }
+  .vg figure { margin: 0; display: grid; gap: .5rem; }
+  .vg figcaption { color: var(--text-2); font-size: .95rem; }
+  .vg-alt { max-height: 80vh; overflow: auto; border: 1px solid var(--linie); background: #fff; }
+  .vg-alt img { width: 100%; }
+  .vg iframe { width: 100%; height: 80vh; border: 1px solid var(--linie); background: var(--bg); }
+  .vg-umschalter { display: flex; flex-wrap: wrap; gap: .5rem; }
+  @media (min-width: 1000px) { .vg-raster { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } }
+</style>
+</head>
+<body>
+<aside class="entwurf" aria-label="Hinweis">Entwurf – nicht öffentlich</aside>
+<main class="vg">
+  <h1>Vorher und nachher</h1>
+  <p class="leise">Links die alte Seite mk-autohandel.at (Bildschirmfoto vom 19.10.2026), rechts der neue Entwurf live.</p>
+  <div class="vg-umschalter">
+    <a class="knopf knopf-rand knopf-klein" href="#" data-alt="/vorher/desktop-startseite.png">Alt: PC</a>
+    <a class="knopf knopf-rand knopf-klein" href="#" data-alt="/vorher/handy-startseite.png">Alt: Handy</a>
+  </div>
+  <div class="vg-raster">
+    <figure>
+      <figcaption>Vorher: alte Startseite</figcaption>
+      <div class="vg-alt" tabindex="0" role="region" aria-label="Bildschirmfoto alte Seite, scrollbar"><img id="alt" src="/entwurf-mk-autohandel/vorher/desktop-startseite.png" alt="Bildschirmfoto der alten Startseite von mk-autohandel.at"></div>
+    </figure>
+    <figure>
+      <figcaption>Nachher: neuer Entwurf (live)</figcaption>
+      <iframe src="/entwurf-mk-autohandel/" title="Neuer Entwurf der Startseite"></iframe>
+    </figure>
+  </div>
+</main>
+<script src="/entwurf-mk-autohandel/vergleich.js" defer></script>
+</body>
+</html>
