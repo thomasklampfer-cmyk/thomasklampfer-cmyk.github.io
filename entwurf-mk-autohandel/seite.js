@@ -14,6 +14,51 @@
   setzeBewegung();
   ruhig.addEventListener('change', () => { setzeBewegung(); if (ruhig.matches) $$('[data-zeige]').forEach((x) => x.classList.add('sichtbar')); });
 
+  /* ---------- Einstieg (Logo zeichnet sich, Vorhang öffnet sich): nur einmal je Sitzung, überspringbar ---------- */
+  if (html.classList.contains('intro')) {
+    try { sessionStorage.setItem('mka-intro', '1'); } catch { /* privater Modus: dann eben jedes Mal */ }
+    const intro = $('[data-intro]');
+    const taste = (ev) => { if (ev.key === 'Escape') fertig(); };
+    const fertig = () => { html.classList.add('intro-fertig'); intro?.remove(); document.removeEventListener('keydown', taste); };
+    $('[data-intro-weiter]')?.addEventListener('click', fertig);
+    document.addEventListener('keydown', taste);
+    setTimeout(fertig, 1700);
+    if (ruhig.matches) fertig();
+  }
+
+  /* ---------- Zahlen, die einmal von 0 hochzählen (Zahlenreihe, Showroom-Eckdaten) ---------- */
+  const formatZahl = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 0 });
+  const zaehleHoch = (el, ziel, { vorne = '', hinten = '', dauer = 1100 } = {}) => {
+    const t0 = performance.now();
+    const schritt = (t) => {
+      const p = Math.min(1, (t - t0) / dauer);
+      el.textContent = vorne + formatZahl.format(Math.round(ziel * (1 - Math.pow(1 - p, 3)))) + hinten;
+      if (p < 1) requestAnimationFrame(schritt);
+    };
+    requestAnimationFrame(schritt);
+  };
+  // Showroom-Folie: alle Zahlen darin einmal zählen (ruft motion.js am PC, am Handy der Beobachter unten)
+  window.mkaZaehlen = (wurzel) => {
+    if (!wurzel || wurzel.dataset.gezaehlt || ruhig.matches) return;
+    wurzel.dataset.gezaehlt = '1';
+    $$('.zahl[data-zahl]', wurzel).forEach((el, i) => setTimeout(() => zaehleHoch(el, Number(el.dataset.zahl), { vorne: el.dataset.vorne || '', hinten: el.dataset.hinten || '', dauer: 900 }), i * 80));
+  };
+  if (!matchMedia('(min-width: 900px) and (min-height: 640px)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { window.mkaZaehlen(e.target); io.unobserve(e.target); } }), { threshold: 0.5 });
+    $$('[data-sr-slide]').forEach((s) => io.observe(s));
+  }
+
+  /* ---------- Seitenwechsel: das Fahrzeugbild fliegt von der Karte in die Detailseite (View Transitions, sonst nichts) ---------- */
+  if (window.CSS?.supports?.('view-transition-name: a')) {
+    document.addEventListener('click', (ev) => {
+      const a = ev.target.closest?.('a.karte-link');
+      const img = a?.querySelector('.karte-bild > img');
+      if (!img || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return;
+      $$('.vt-bild img, [style*="view-transition-name"]').forEach((x) => { x.style.viewTransitionName = 'none'; });
+      img.style.viewTransitionName = 'auto-bild';
+    });
+  }
+
   /* ---------- Kopf: über dem Startbild durchsichtig, danach fest ---------- */
   const kopf = $('[data-kopf]');
   if (kopf?.classList.contains('kopf-ueber')) {
@@ -70,7 +115,7 @@
         if (e.isIntersecting) { (ziel.get(e.target) || []).forEach((x) => x.classList.add('sichtbar')); io.unobserve(e.target); }
       }), { rootMargin: '0px 0px -8% 0px', threshold: 0 });
       zeige.forEach((x) => {
-        const beob = x.dataset.zeige === 'maske' ? x.parentElement : x;
+        const beob = x.dataset.zeige === 'maske' || x.dataset.zeige === 'bild' ? x.parentElement : x;
         if (!ziel.has(beob)) ziel.set(beob, []);
         ziel.get(beob).push(x);
         io.observe(beob);
@@ -85,14 +130,7 @@
     const io = new IntersectionObserver((eintraege) => eintraege.forEach((e) => {
       if (!e.isIntersecting) return;
       io.unobserve(e.target);
-      const ziel = Number(e.target.dataset.zaehler);
-      const t0 = performance.now(), dauer = 1100;
-      const schritt = (t) => {
-        const p = Math.min(1, (t - t0) / dauer);
-        e.target.textContent = Math.round(ziel * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) requestAnimationFrame(schritt);
-      };
-      requestAnimationFrame(schritt);
+      zaehleHoch(e.target, Number(e.target.dataset.zaehler));
     }), { threshold: 0.6 });
     zaehler.forEach((x) => io.observe(x));
   }
@@ -274,15 +312,15 @@
     if (nr) spur.addEventListener('scroll', () => { nr.textContent = Math.round(spur.scrollLeft / breite()) + 1; }, { passive: true });
   };
   reihe($('[data-sr-spur]'), $('[data-sr-zurueck]'), $('[data-sr-weiter]'), $('[data-sr-nr]'));
-  reihe($('[data-bestand-fenster]'), $('[data-bestand-zurueck]'), $('[data-bestand-weiter]'));
+  reihe($('[data-stapel]'), $('[data-leist-zurueck]'), $('[data-leist-weiter]'));
 
   /* ---------- Bewegung nachladen (nach dem Laden der Seite) ---------- */
-  const brauchtBewegung = $('[data-held], [data-showroom], [data-stapel], [data-ablauf]');
+  const brauchtBewegung = $('[data-held], [data-showroom], [data-stapel], [data-ablauf], [data-band], .karte-link, [data-magnet]');
   if (brauchtBewegung) {
     const skript = (src) => new Promise((ok, fehl) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = fehl; document.head.appendChild(s); });
     const start = () => {
       if (ruhig.matches) return;
-      skript('/entwurf-mk-autohandel/vendor/gsap.min.js').then(() => skript('/entwurf-mk-autohandel/vendor/ScrollTrigger.min.js')).then(() => skript('/entwurf-mk-autohandel/vendor/lenis.min.js')).then(() => skript('/entwurf-mk-autohandel/motion.js?v=3')).catch(() => {});
+      skript('/entwurf-mk-autohandel/vendor/gsap.min.js').then(() => skript('/entwurf-mk-autohandel/vendor/ScrollTrigger.min.js')).then(() => skript('/entwurf-mk-autohandel/vendor/lenis.min.js')).then(() => skript('/entwurf-mk-autohandel/motion.js?v=4')).catch(() => {});
     };
     const los = () => ('requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 1200 }) : setTimeout(start, 200));
     if (document.readyState === 'complete') los(); else addEventListener('load', los, { once: true });

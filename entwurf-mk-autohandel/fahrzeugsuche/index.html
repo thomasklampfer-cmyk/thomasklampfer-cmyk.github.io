@@ -10,14 +10,15 @@
 <link rel="icon" href="/entwurf-mk-autohandel/bilder/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/entwurf-mk-autohandel/schriften/archivo-narrow-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/entwurf-mk-autohandel/schriften/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/entwurf-mk-autohandel/stil.css?v=a4ad6d57b5">
-<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('bewegung')</script>
-<script src="/entwurf-mk-autohandel/seite.js?v=b6289288eb" defer></script>
+<link rel="stylesheet" href="/entwurf-mk-autohandel/stil.css?v=edb95a17ba">
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('bewegung');try{if(/^\/(index\.html)?$/.test(location.pathname)&&!sessionStorage.getItem('mka-intro'))document.documentElement.classList.add('intro')}catch(e){}}</script>
+<script src="/entwurf-mk-autohandel/seite.js?v=3e25d74197" defer></script>
 
 </head>
 <body class="seite-unter">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
 <aside class="entwurf" aria-label="Hinweis" style="height:auto;padding:.5rem 1rem;background:#e8897b;color:#1a0d0b;font-size:.95rem">DEMO mit Beispielpreisen – nicht veröffentlichen</aside>
+
 <header class="kopf" data-kopf>
   <a class="marke" href="/" aria-label="MK Autohandel &amp; Vermietung, zur Startseite">
     <img class="marke-logo" src="/entwurf-mk-autohandel/bilder/logo-mka-hell.svg" alt="" width="46" height="40">
@@ -51,28 +52,28 @@
   <ol class="formular-stand" aria-label="Fortschritt"><li data-stand="0" aria-current="step"><span>Marke und Modell</span></li><li data-stand="1"><span>Budget</span></li><li data-stand="2"><span>Baujahr und Kilometer</span></li><li data-stand="3"><span>Kontakt</span></li></ol>
   <fieldset class="schritt aktiv" data-schritt="0">
     <legend class="schritt-titel"><span class="schritt-nr">Schritt 1 von 4</span>Marke und Modell</legend>
-    <div class="felder"><div class="feld"><label for="f-marke-dkasj">Marke <span class="pflicht" aria-hidden="true">*</span></label><input id="f-marke-dkasj" name="marke" type="text" autocomplete="off" required ></div><div class="feld"><label for="f-modell-hzure">Modell <span class="optional">(optional)</span></label><input id="f-modell-hzure" name="modell" type="text" autocomplete="off" ></div><div class="feld"><label for="f-aufbau-mxoa2">Aufbau <span class="optional">(optional)</span></label><select id="f-aufbau-mxoa2" name="aufbau" ><option value="">Bitte wählen</option><option>Limousine</option><option>Kombi</option><option>SUV / Geländewagen</option><option>Kleinwagen</option><option>Cabrio</option><option>Coupé</option><option>Van / Kleinbus</option><option>Kastenwagen</option><option>Pick-up</option><option>Sonstige</option></select></div></div>
+    <div class="felder"><div class="feld"><label for="f-marke-g7nsx">Marke <span class="pflicht" aria-hidden="true">*</span></label><input id="f-marke-g7nsx" name="marke" type="text" autocomplete="off" required ></div><div class="feld"><label for="f-modell-hqure">Modell <span class="optional">(optional)</span></label><input id="f-modell-hqure" name="modell" type="text" autocomplete="off" ></div><div class="feld"><label for="f-aufbau-3c7tc">Aufbau <span class="optional">(optional)</span></label><select id="f-aufbau-3c7tc" name="aufbau" ><option value="">Bitte wählen</option><option>Limousine</option><option>Kombi</option><option>SUV / Geländewagen</option><option>Kleinwagen</option><option>Cabrio</option><option>Coupé</option><option>Van / Kleinbus</option><option>Kastenwagen</option><option>Pick-up</option><option>Sonstige</option></select></div></div>
     <div class="schritt-knoepfe">
       
       <button class="knopf knopf-akzent" type="button" data-weiter>Weiter <svg class="ic" aria-hidden="true" focusable="false"><use href="/entwurf-mk-autohandel/icons.svg#i-arrow-right"/></svg></button>
     </div>
   </fieldset><fieldset class="schritt" data-schritt="1">
     <legend class="schritt-titel"><span class="schritt-nr">Schritt 2 von 4</span>Budget</legend>
-    <div class="felder"><div class="feld"><label for="f-budget-840i8">Budget bis (Euro) <span class="pflicht" aria-hidden="true">*</span></label><input id="f-budget-840i8" name="budget" type="number" required inputmode="numeric" min="1000" step="500"></div><fieldset class="feld feld-radio"><legend>Haben Sie ein Auto zum Ankauf? <span class="optional">(optional)</span></legend><div class="radio-gruppe"><label class="radio"><input type="radio" name="eintausch" value="Nein"><span>Nein</span></label><label class="radio"><input type="radio" name="eintausch" value="Ja"><span>Ja</span></label></div></fieldset></div>
+    <div class="felder"><div class="feld"><label for="f-budget-1350p">Budget bis (Euro) <span class="pflicht" aria-hidden="true">*</span></label><input id="f-budget-1350p" name="budget" type="number" required inputmode="numeric" min="1000" step="500"></div><fieldset class="feld feld-radio"><legend>Haben Sie ein Auto zum Ankauf? <span class="optional">(optional)</span></legend><div class="radio-gruppe"><label class="radio"><input type="radio" name="eintausch" value="Nein"><span>Nein</span></label><label class="radio"><input type="radio" name="eintausch" value="Ja"><span>Ja</span></label></div></fieldset></div>
     <div class="schritt-knoepfe">
       <button class="knopf knopf-rand" type="button" data-zurueck>Zurück</button>
       <button class="knopf knopf-akzent" type="button" data-weiter>Weiter <svg class="ic" aria-hidden="true" focusable="false"><use href="/entwurf-mk-autohandel/icons.svg#i-arrow-right"/></svg></button>
     </div>
   </fieldset><fieldset class="schritt" data-schritt="2">
     <legend class="schritt-titel"><span class="schritt-nr">Schritt 3 von 4</span>Baujahr und Kilometer</legend>
-    <div class="felder"><div class="feld"><label for="f-jahr_ab-c7zsg">Erstzulassung ab Jahr <span class="optional">(optional)</span></label><input id="f-jahr_ab-c7zsg" name="jahr_ab" type="number" inputmode="numeric" min="1990" max="2030"></div><div class="feld"><label for="f-km_bis-gosar">Kilometer bis <span class="optional">(optional)</span></label><input id="f-km_bis-gosar" name="km_bis" type="number" inputmode="numeric" min="0" step="5000"></div><div class="feld"><label for="f-kraftstoff-h7o32">Kraftstoff <span class="optional">(optional)</span></label><select id="f-kraftstoff-h7o32" name="kraftstoff" ><option value="">Bitte wählen</option><option>Benzin</option><option>Diesel</option><option>Hybrid (Benzin)</option><option>Hybrid (Diesel)</option><option>Plug-in-Hybrid</option><option>Elektro</option><option>Erdgas (CNG)</option><option>Autogas (LPG)</option><option>Sonstige</option></select></div><div class="feld"><label for="f-getriebe-3aqed">Getriebe <span class="optional">(optional)</span></label><select id="f-getriebe-3aqed" name="getriebe" ><option value="">Bitte wählen</option><option>Schaltgetriebe</option><option>Automatik</option></select></div><div class="feld feld-breit"><label for="f-wuensche-oi3kq">Weitere Wünsche <span class="optional">(optional)</span></label><textarea id="f-wuensche-oi3kq" name="wuensche" rows="4" aria-describedby="f-wuensche-oi3kq-h" ></textarea><p class="feld-hilfe" id="f-wuensche-oi3kq-h">Zum Beispiel Farbe, Anhängerkupplung, Sitzheizung.</p></div></div>
+    <div class="felder"><div class="feld"><label for="f-jahr_ab-p1gjw">Erstzulassung ab Jahr <span class="optional">(optional)</span></label><input id="f-jahr_ab-p1gjw" name="jahr_ab" type="number" inputmode="numeric" min="1990" max="2030"></div><div class="feld"><label for="f-km_bis-c6jjh">Kilometer bis <span class="optional">(optional)</span></label><input id="f-km_bis-c6jjh" name="km_bis" type="number" inputmode="numeric" min="0" step="5000"></div><div class="feld"><label for="f-kraftstoff-7p98m">Kraftstoff <span class="optional">(optional)</span></label><select id="f-kraftstoff-7p98m" name="kraftstoff" ><option value="">Bitte wählen</option><option>Benzin</option><option>Diesel</option><option>Hybrid (Benzin)</option><option>Hybrid (Diesel)</option><option>Plug-in-Hybrid</option><option>Elektro</option><option>Erdgas (CNG)</option><option>Autogas (LPG)</option><option>Sonstige</option></select></div><div class="feld"><label for="f-getriebe-wej8v">Getriebe <span class="optional">(optional)</span></label><select id="f-getriebe-wej8v" name="getriebe" ><option value="">Bitte wählen</option><option>Schaltgetriebe</option><option>Automatik</option></select></div><div class="feld feld-breit"><label for="f-wuensche-vzeww">Weitere Wünsche <span class="optional">(optional)</span></label><textarea id="f-wuensche-vzeww" name="wuensche" rows="4" aria-describedby="f-wuensche-vzeww-h" ></textarea><p class="feld-hilfe" id="f-wuensche-vzeww-h">Zum Beispiel Farbe, Anhängerkupplung, Sitzheizung.</p></div></div>
     <div class="schritt-knoepfe">
       <button class="knopf knopf-rand" type="button" data-zurueck>Zurück</button>
       <button class="knopf knopf-akzent" type="button" data-weiter>Weiter <svg class="ic" aria-hidden="true" focusable="false"><use href="/entwurf-mk-autohandel/icons.svg#i-arrow-right"/></svg></button>
     </div>
   </fieldset><fieldset class="schritt" data-schritt="3">
     <legend class="schritt-titel"><span class="schritt-nr">Schritt 4 von 4</span>Kontakt</legend>
-    <div class="felder"><div class="feld"><label for="f-name-2q20g">Name <span class="pflicht" aria-hidden="true">*</span></label><input id="f-name-2q20g" name="name" type="text" autocomplete="name" required ></div><div class="feld"><label for="f-telefon-4tnwz">Telefon <span class="optional">(optional)</span></label><input id="f-telefon-4tnwz" name="telefon" type="tel" autocomplete="tel" aria-describedby="f-telefon-4tnwz-h" data-eins-von="kontakt"><p class="feld-hilfe" id="f-telefon-4tnwz-h">Telefon oder E-Mail genügt.</p></div><div class="feld"><label for="f-email-scocy">E-Mail <span class="optional">(optional)</span></label><input id="f-email-scocy" name="email" type="email" autocomplete="email" data-eins-von="kontakt"></div></div>
+    <div class="felder"><div class="feld"><label for="f-name-ouw21">Name <span class="pflicht" aria-hidden="true">*</span></label><input id="f-name-ouw21" name="name" type="text" autocomplete="name" required ></div><div class="feld"><label for="f-telefon-twx1g">Telefon <span class="optional">(optional)</span></label><input id="f-telefon-twx1g" name="telefon" type="tel" autocomplete="tel" aria-describedby="f-telefon-twx1g-h" data-eins-von="kontakt"><p class="feld-hilfe" id="f-telefon-twx1g-h">Telefon oder E-Mail genügt.</p></div><div class="feld"><label for="f-email-ody8h">E-Mail <span class="optional">(optional)</span></label><input id="f-email-ody8h" name="email" type="email" autocomplete="email" data-eins-von="kontakt"></div></div>
     <div class="schritt-knoepfe">
       <button class="knopf knopf-rand" type="button" data-zurueck>Zurück</button>
       <button class="knopf knopf-akzent" type="submit" disabled data-absenden>Wunschauto anfragen</button>
@@ -86,6 +87,7 @@
 </section>
 </main>
 <footer class="fuss">
+  <svg class="fuss-wort" data-zeige="wort" viewBox="0 0 1000 300" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><text x="0" y="290" textLength="1000" lengthAdjust="spacingAndGlyphs">MKA</text></svg>
   <div class="wrap fuss-raster">
     <div class="fuss-marke">
       <img src="/entwurf-mk-autohandel/bilder/logo-mka-hell.svg" alt="MKA Logo" width="92" height="80" loading="lazy">

@@ -10,14 +10,15 @@
 <link rel="icon" href="/entwurf-mk-autohandel/bilder/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/entwurf-mk-autohandel/schriften/archivo-narrow-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/entwurf-mk-autohandel/schriften/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/entwurf-mk-autohandel/stil.css?v=a4ad6d57b5">
-<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('bewegung')</script>
-<script src="/entwurf-mk-autohandel/seite.js?v=b6289288eb" defer></script>
+<link rel="stylesheet" href="/entwurf-mk-autohandel/stil.css?v=edb95a17ba">
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('bewegung');try{if(/^\/(index\.html)?$/.test(location.pathname)&&!sessionStorage.getItem('mka-intro'))document.documentElement.classList.add('intro')}catch(e){}}</script>
+<script src="/entwurf-mk-autohandel/seite.js?v=3e25d74197" defer></script>
 
 </head>
 <body class="seite-unter">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
 <aside class="entwurf" aria-label="Hinweis" style="height:auto;padding:.5rem 1rem;background:#e8897b;color:#1a0d0b;font-size:.95rem">DEMO mit Beispielpreisen – nicht veröffentlichen</aside>
+
 <header class="kopf" data-kopf>
   <a class="marke" href="/" aria-label="MK Autohandel &amp; Vermietung, zur Startseite">
     <img class="marke-logo" src="/entwurf-mk-autohandel/bilder/logo-mka-hell.svg" alt="" width="46" height="40">
@@ -64,14 +65,14 @@
   <ol class="formular-stand" aria-label="Fortschritt"><li data-stand="0" aria-current="step"><span>Zeitraum</span></li><li data-stand="1"><span>Kontakt</span></li></ol>
   <fieldset class="schritt aktiv" data-schritt="0">
     <legend class="schritt-titel"><span class="schritt-nr">Schritt 1 von 2</span>Zeitraum</legend>
-    <div class="felder"><div class="feld"><label for="f-von-godgp">Abholung am <span class="pflicht" aria-hidden="true">*</span></label><input id="f-von-godgp" name="von" type="date" required data-ab-heute></div><div class="feld"><label for="f-bis-kexsp">Rückgabe am <span class="pflicht" aria-hidden="true">*</span></label><input id="f-bis-kexsp" name="bis" type="date" required data-ab-heute data-nicht-vor="von"></div><div class="feld"><label for="f-personen-txs7v">Personen <span class="optional">(optional)</span></label><input id="f-personen-txs7v" name="personen" type="number" inputmode="numeric" min="1" max="9"></div><div class="feld"><label for="f-zweck-wibxm">Wofür? <span class="optional">(optional)</span></label><input id="f-zweck-wibxm" name="zweck" type="text" aria-describedby="f-zweck-wibxm-h" ><p class="feld-hilfe" id="f-zweck-wibxm-h">Zum Beispiel Urlaub, Ausflug, Vereinsfahrt.</p></div></div>
+    <div class="felder"><div class="feld"><label for="f-von-t97d1">Abholung am <span class="pflicht" aria-hidden="true">*</span></label><input id="f-von-t97d1" name="von" type="date" required data-ab-heute></div><div class="feld"><label for="f-bis-ir1v4">Rückgabe am <span class="pflicht" aria-hidden="true">*</span></label><input id="f-bis-ir1v4" name="bis" type="date" required data-ab-heute data-nicht-vor="von"></div><div class="feld"><label for="f-personen-nvu61">Personen <span class="optional">(optional)</span></label><input id="f-personen-nvu61" name="personen" type="number" inputmode="numeric" min="1" max="9"></div><div class="feld"><label for="f-zweck-jz5bq">Wofür? <span class="optional">(optional)</span></label><input id="f-zweck-jz5bq" name="zweck" type="text" aria-describedby="f-zweck-jz5bq-h" ><p class="feld-hilfe" id="f-zweck-jz5bq-h">Zum Beispiel Urlaub, Ausflug, Vereinsfahrt.</p></div></div>
     <div class="schritt-knoepfe">
       
       <button class="knopf knopf-akzent" type="button" data-weiter>Weiter <svg class="ic" aria-hidden="true" focusable="false"><use href="/entwurf-mk-autohandel/icons.svg#i-arrow-right"/></svg></button>
     </div>
   </fieldset><fieldset class="schritt" data-schritt="1">
     <legend class="schritt-titel"><span class="schritt-nr">Schritt 2 von 2</span>Kontakt</legend>
-    <div class="felder"><div class="feld"><label for="f-name-dt423">Name <span class="pflicht" aria-hidden="true">*</span></label><input id="f-name-dt423" name="name" type="text" autocomplete="name" required ></div><div class="feld"><label for="f-telefon-xrg0j">Telefon <span class="optional">(optional)</span></label><input id="f-telefon-xrg0j" name="telefon" type="tel" autocomplete="tel" aria-describedby="f-telefon-xrg0j-h" data-eins-von="kontakt"><p class="feld-hilfe" id="f-telefon-xrg0j-h">Telefon oder E-Mail genügt.</p></div><div class="feld"><label for="f-email-x941c">E-Mail <span class="optional">(optional)</span></label><input id="f-email-x941c" name="email" type="email" autocomplete="email" data-eins-von="kontakt"></div><div class="feld feld-breit"><label for="f-nachricht-ldxrq">Nachricht <span class="optional">(optional)</span></label><textarea id="f-nachricht-ldxrq" name="nachricht" rows="4" ></textarea></div></div>
+    <div class="felder"><div class="feld"><label for="f-name-lyr30">Name <span class="pflicht" aria-hidden="true">*</span></label><input id="f-name-lyr30" name="name" type="text" autocomplete="name" required ></div><div class="feld"><label for="f-telefon-qybro">Telefon <span class="optional">(optional)</span></label><input id="f-telefon-qybro" name="telefon" type="tel" autocomplete="tel" aria-describedby="f-telefon-qybro-h" data-eins-von="kontakt"><p class="feld-hilfe" id="f-telefon-qybro-h">Telefon oder E-Mail genügt.</p></div><div class="feld"><label for="f-email-9kqgs">E-Mail <span class="optional">(optional)</span></label><input id="f-email-9kqgs" name="email" type="email" autocomplete="email" data-eins-von="kontakt"></div><div class="feld feld-breit"><label for="f-nachricht-fe90v">Nachricht <span class="optional">(optional)</span></label><textarea id="f-nachricht-fe90v" name="nachricht" rows="4" ></textarea></div></div>
     <div class="schritt-knoepfe">
       <button class="knopf knopf-rand" type="button" data-zurueck>Zurück</button>
       <button class="knopf knopf-akzent" type="submit" disabled data-absenden>Mietbus anfragen</button>
@@ -85,6 +86,7 @@
 </section>
 </main>
 <footer class="fuss">
+  <svg class="fuss-wort" data-zeige="wort" viewBox="0 0 1000 300" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><text x="0" y="290" textLength="1000" lengthAdjust="spacingAndGlyphs">MKA</text></svg>
   <div class="wrap fuss-raster">
     <div class="fuss-marke">
       <img src="/entwurf-mk-autohandel/bilder/logo-mka-hell.svg" alt="MKA Logo" width="92" height="80" loading="lazy">
