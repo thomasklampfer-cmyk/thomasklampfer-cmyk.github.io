@@ -756,8 +756,8 @@ async function uebersicht () {
     const passt = a => !s || [a.kurzname, a.kunde, a.ort, a.modell, a.telefon].some(t => String(t || '').toLowerCase().includes(s))
     const ach = achtung.filter(passt)
     const lau = laufen.filter(passt)
-    if (!liste.dataset.tel) {
-      liste.dataset.tel = '1'
+    if (!liste.dataset.rufBereit) {
+      liste.dataset.rufBereit = '1' // nicht data-tel: sonst hält closest('[data-tel]') die ganze Liste für einen Anruf-Knopf
       const ruf = e => {
         const t = e.target.closest('[data-tel]')
         if (!t || (e.type === 'keydown' && e.key !== 'Enter')) return
