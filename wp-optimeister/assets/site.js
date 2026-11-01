@@ -262,8 +262,9 @@
       var fein = function (an) { return wp * .9 * an * p / 100; };
       var tief = zehn(pv(.25)), hoch = zehn(pv(.35) + fein(.05));   // Untergrenze ohne Heizkurve: die gilt nur bedingt
       rS.textContent = spanne(tief, hoch);
-      var vz = function (n) { return (n < 0 ? '−' : '+') + zahl(Math.abs(n)) + ' €'; };
-      d.getElementById('e-netto').textContent = vz(tief - 359) + ' bis ' + vz(hoch - 359);
+      var pz = function (n) { return Math.round(n / 359 * 20) * 5; };   // auf 5 % gerundet
+      var pa = pz(tief), pb = pz(hoch);
+      d.getElementById('e-netto').textContent = pa >= 100 ? 'die ganze Betreuung' : 'rund ' + pa + ' bis ' + Math.min(100, pb) + ' %';
       d.getElementById('e-pv').textContent = spanne(zehn(pv(.25)), zehn(pv(.35)));
       d.getElementById('e-fein').textContent = spanne(zehn(fein(.025)), zehn(fein(.05)));
     };
