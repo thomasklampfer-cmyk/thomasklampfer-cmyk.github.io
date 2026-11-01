@@ -110,10 +110,10 @@ ul,ol{list-style:none}
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .kachel{--f:var(--kuehl);position:relative;grid-column:span 2;display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r-3);border:1px solid rgb(255 255 255/.075);background:radial-gradient(70% 62% at 50% 30%,color-mix(in srgb,var(--f) 17%,transparent),transparent 72%),linear-gradient(180deg,#0f1013,#0a0b0d);transition:border-color .5s var(--ease),transform .7s var(--ease)}
 .kachel.breit{grid-column:span 3}
-.kachel:hover{border-color:color-mix(in srgb,var(--f) 42%,transparent);transform:translate3d(0,-3px,0)}
+@media (hover:hover){.kachel:hover{border-color:color-mix(in srgb,var(--f) 42%,transparent);transform:translate3d(0,-3px,0)}}
 .buehnchen{display:flex;align-items:center;justify-content:center;padding:clamp(26px,3vw,44px) clamp(20px,2.4vw,36px) 6px;flex:none}
 .instrument{width:100%;max-width:340px;height:auto;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .9s var(--ease)}
-.kachel:hover .instrument{transform:scale(1.035)}
+@media (hover:hover){.kachel:hover .instrument{transform:scale(1.035)}}
 .instrument .gl{stroke:var(--f);stroke-width:9;opacity:.16}
 .instrument .li{stroke:var(--f);stroke-width:2.4}
 .instrument .fein{stroke:var(--f);stroke-width:1.4;opacity:.3}
@@ -334,3 +334,111 @@ footer{padding:40px var(--rand) 44px;border-top:1px solid var(--linie);color:var
 .entwurf .lang{display:inline}
 @media (max-width:900px){.entwurf .lang{display:none}}
 @media (max-width:430px){.entwurf{font-size:9.6px;gap:6px;letter-spacing:0}}
+
+/* ---------- Handy ---------- */
+.handy-cta{display:none}
+.regel input{touch-action:pan-y}
+@media (max-width:760px){
+  html{scroll-padding-top:96px}
+  .kopf,.abschnitt,.aussage,footer{padding-left:max(var(--rand),env(safe-area-inset-left,0px));padding-right:max(var(--rand),env(safe-area-inset-right,0px))}
+  .wahl{flex:1 1 auto;max-width:300px;margin-inline-start:auto}
+  .wahl a{flex:1;min-height:40px;display:flex;align-items:center;justify-content:center;padding:0 8px;font-size:13.5px}
+  .logo{min-height:44px}
+  .film{height:560svh}
+  /* Bild oben, Text darunter: das Produkt liegt nie unter der Schrift */
+  .film-buehne video,.film-buehne .film-bild{inset:84px 0 auto 0;width:100%;height:min(92vw,45svh);object-position:50% 50%}
+  .film-buehne::after{background:linear-gradient(180deg,transparent calc(84px + min(92vw,45svh) - 90px),#000 calc(84px + min(92vw,45svh) - 6px)),linear-gradient(180deg,#000 28px,transparent 90px)}
+  .takt,.takt.mitte{inset:auto var(--rand) calc(20px + env(safe-area-inset-bottom,0px)) var(--rand);display:block;z-index:2}
+  .takt h1{font-size:clamp(32px,9.6vw,44px);line-height:1.04}
+  .takt h2{font-size:clamp(27px,8vw,38px)}
+  .vorzeile{margin-bottom:10px;font-size:11.5px}
+  .takt p{font-size:15.5px;line-height:1.4;margin-top:10px}
+  .takt .kn{margin-top:16px}
+  .takt .kn .knopf.leise{display:none}
+  .takt .knopf{min-height:48px;width:100%}
+  .teile{margin-top:12px;font-size:13.5px}
+  .teile li{padding:6px 0}
+  .teile code{font-size:11.5px}
+  /* Ruhige Fassung genauso */
+  .buehne-still{display:block;min-height:0;padding-top:84px}
+  .buehne-still>img{position:relative;inset:auto;width:100%;height:min(92vw,50svh);object-position:50% 50%;display:block}
+  .buehne-still::after{inset:84px 0 auto 0;height:min(92vw,50svh);background:linear-gradient(180deg,transparent 70%,#000 100%)}
+  .buehne-still .takt{position:relative;inset:auto;margin:6px var(--rand) 34px;width:auto;z-index:2}
+  /* Tippflächen */
+  .fragen summary{min-height:56px;padding:18px 0;font-size:18px}
+  .fragen details p{padding-right:0}
+  .annahmen summary{min-height:56px}
+  .regel{gap:4px 12px}
+  .regel label{font-size:15px}
+  .regel input{height:44px}
+  .regel input::-webkit-slider-thumb{width:28px;height:28px;margin-top:-12px}
+  .regel input::-moz-range-thumb{width:28px;height:28px}
+  .regler{gap:18px}
+  .zustimmung{align-items:flex-start;padding:6px 0;min-height:44px;font-size:14.5px}
+  .zustimmung input{width:24px;height:24px;margin-top:0}
+  .zustimmung a{display:inline-block;padding:6px 0}
+  .formular .knopf{width:100%;justify-self:stretch;min-height:54px}
+  .umstieg .textlink{display:inline-block;padding:10px 0}
+  .fuss{flex-direction:column;align-items:flex-start;gap:14px}
+  .fuss nav{gap:0 22px}
+  .fuss nav a{display:inline-flex;align-items:center;min-height:44px}
+  /* Abschnitte kompakter */
+  .abschnitt{padding-top:72px;padding-bottom:72px}
+  .aussage{padding-top:88px;padding-bottom:72px}
+  .kopfzeile{margin-bottom:32px}
+  .kopfzeile h2,.preis h2,.schluss h2{font-size:clamp(31px,8.6vw,42px)}
+  .wort-reveal{font-size:clamp(29px,8.2vw,40px)}
+  .buehnchen{padding:26px 24px 0}
+  .instrument{max-width:230px}
+  .kachel h3{font-size:22px}
+  .kachel p{font-size:15.5px}
+  .kt{padding:12px 22px 24px}
+  .bento{gap:12px}
+  .melde{padding:22px}
+  .melde-reihe{gap:20px}
+  .rechner{gap:12px}
+  .regler,.ergebnis{padding:22px}
+  .e-zahl{font-size:clamp(36px,10.6vw,50px)}
+  .e-teile dt{font-size:14.5px}
+  .sicher{gap:12px}
+  .sicher>div{padding:22px}
+  .preis-zahlen{padding:22px}
+  .preis-zeile b{font-size:clamp(34px,10vw,48px)}
+  .vergleich{font-size:14.5px}
+  .vergleich th,.vergleich td{padding:13px 6px}
+  .vergleich thead th{font-size:13.5px;letter-spacing:-.01em}
+  .vergleich thead th small{font-size:10px}
+  .geraete-rahmen{box-shadow:none}
+  .handy-bild{box-shadow:none}
+  /* Fester Knopf am Daumen, sobald der Film vorbei ist */
+  .handy-cta{display:flex;position:fixed;z-index:55;left:max(14px,env(safe-area-inset-left,0px));right:max(14px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transform:translate3d(0,14px,0);transition:opacity .35s var(--ease),transform .45s var(--ease),visibility .35s}
+  .handy-cta .knopf{width:100%;min-height:52px;box-shadow:0 10px 30px rgb(0 0 0/.65)}
+  .handy-cta.an{opacity:1;visibility:visible;transform:none}
+}
+/* Handy quer: Text schmal links, Film daneben */
+@media (max-height:520px) and (orientation:landscape){
+  .entwurf{height:22px;font-size:10.5px}
+  .kopf{top:22px;height:46px}
+  .film{height:560vh}
+  .takt,.takt.mitte{left:max(var(--rand),env(safe-area-inset-left,0px));width:46vw;top:68px;bottom:10px;display:flex;flex-direction:column;justify-content:center}
+  .takt h1{font-size:30px}
+  .takt h2{font-size:25px}
+  .takt p{font-size:14px;margin-top:6px}
+  .vorzeile{margin-bottom:6px}
+  .takt .kn{margin-top:10px}
+  .takt .knopf{min-height:40px}
+  .takt .kn .knopf.leise{display:none}
+  .teile{display:none}
+  .scrollhinweis,.fortschritt{display:none}
+  .buehne-still{min-height:100vh}
+  .buehne-still .takt{margin:68px 0 14px var(--rand);top:auto;bottom:auto}
+}
+
+/* Große Handys: Text direkt unter dem Bild statt ganz unten */
+@media (max-width:760px) and (min-height:720px){
+  .film-buehne video,.film-buehne .film-bild{height:min(100vw,50svh)}
+  .film-buehne::after{background:linear-gradient(180deg,transparent calc(84px + min(100vw,50svh) - 90px),#000 calc(84px + min(100vw,50svh) - 6px)),linear-gradient(180deg,#000 28px,transparent 90px)}
+  .takt,.takt.mitte{top:calc(84px + min(100vw,50svh) + 4px);bottom:auto}
+}
+@media (max-width:370px){.entwurf .kurz{display:none}}
+@media (max-height:520px) and (orientation:landscape){.takt,.takt.mitte{width:39vw}}

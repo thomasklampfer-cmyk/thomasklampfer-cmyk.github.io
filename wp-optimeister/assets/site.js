@@ -137,6 +137,7 @@
   var maler = null;
   function starteMaler() {
     if (!video || ruhig || !('VideoDecoder' in window)) return;
+    if (navigator.connection && navigator.connection.saveData) return;   // Datensparmodus: kein Filmdownload
     var quelle = video.currentSrc; if (!quelle) return;
     fetch(quelle).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer(); }).then(function (b) {
       var m = leseMP4(b);
@@ -198,7 +199,9 @@
   var kopf = d.querySelector('.kopf'), kopfStand = null;
   var zuletzt = performance.now(), glatt = 0, letzte = -1;
   var fHoehe = 0, fOben = 0;
-  function massFilm() { if (film) { fHoehe = film.offsetHeight - innerHeight; fOben = film.getBoundingClientRect().top + scrollY; } }
+  // Bühne statt innerHeight: die Adressleiste am Handy soll den Film nicht springen lassen
+  var fBuehne = film && film.querySelector('.film-buehne');
+  function massFilm() { if (film) { fHoehe = film.offsetHeight - fBuehne.offsetHeight; fOben = film.getBoundingClientRect().top + scrollY; } }
   massFilm(); addEventListener('resize', massFilm);
 
   function schritt(jetzt) {
@@ -266,6 +269,16 @@
     };
     ids.forEach(function (i) { einz[i].addEventListener('input', rechne); });
     rechne();
+  }
+
+  // Fester Knopf am Handy: nach dem ersten Bildschirm sichtbar, beim Formular wieder weg
+  var cta = d.querySelector('.handy-cta'), ziel = d.getElementById('anfrage');
+  if (cta && ziel && 'IntersectionObserver' in window) {
+    var hinter = false, amZiel = false;
+    var ctaLage = function () { cta.classList.toggle('an', hinter && !amZiel); };
+    var ende2 = d.querySelector('.film') || d.querySelector('.buehne-still');
+    new IntersectionObserver(function (es) { hinter = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; ctaLage(); }).observe(ende2);
+    new IntersectionObserver(function (es) { amZiel = es[0].isIntersecting; ctaLage(); }).observe(ziel);
   }
 
   // Anfrage (Entwurf: sendet nichts)
